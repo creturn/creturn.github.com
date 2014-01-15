@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用.htaccess自定义404页面 | Return&#39;s Blog </title>
+  <meta name="author" content="Return">
+  
+  <meta name="description" content="专注于互联网开发技术，注重网络安全技术，注重网络攻防技术，注重渗透测试技术，backtrack5渗透测试平台研究，软件开发，网页设计，网页制作，网站建设">
+  
+  
+  <meta property="og:title" content="使用.htaccess自定义404页面"/>
+  <meta property="og:site_name" content="Return&#39;s Blog "/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+   <link rel="apple-touch-icon" href="/icon.png" />
+   <link rel="shortcut icon" href="/favicon.png" >
+   <link rel="alternate" href="http://www.creturn.com/atom.xml" title="Return&#39;s Blog " type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <div id="content" class="inner">
+    <aside id="sidebar" class="alignleft">
+      <div class="navigationBar">
+        <a href="/">Return&#39;s Blog </a>
+      </div>
+    	
+  <nav class="widget" id="menu">
+	<ul>
+    
+      <li class="cell"><a class="next" href="/">Home</a><li>
+    
+      <li class="cell"><a class="next" href="/archives/">Archives</a><li>
+    
+      <li class="cell"><a class="next" href="/about/">About</a><li>
+    
+    </ul>
+</nav>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/原创作品/">原创作品</a><small>30</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/">技术文章</a><small>23</small></li>
+  
+    <li><a href="/categories/技术文章/">技术文章</a><small>7</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/最新漏洞/">最新漏洞</a><small>3</small></li>
+  
+    <li><a href="/categories/技术文章/最新漏洞/">最新漏洞</a><small>2</small></li>
+  
+    <li><a href="/categories/最新漏洞/">最新漏洞</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Android/" style="font-size: 10.00px;">Android</a><a href="/tags/Backtrack5/" style="font-size: 10.00px;">Backtrack5</a><a href="/tags/Metasploit/" style="font-size: 10.00px;">Metasploit</a><a href="/tags/Mysql/" style="font-size: 10.00px;">Mysql</a><a href="/tags/Nginx解析漏洞/" style="font-size: 10.00px;">Nginx解析漏洞</a><a href="/tags/Return/" style="font-size: 10.00px;">Return</a><a href="/tags/ThinkPHP远程/" style="font-size: 10.00px;">ThinkPHP远程</a><a href="/tags/alfred/" style="font-size: 10.00px;">alfred</a><a href="/tags/android/" style="font-size: 13.33px;">android</a><a href="/tags/apache/" style="font-size: 10.00px;">apache</a><a href="/tags/armitage/" style="font-size: 10.00px;">armitage</a><a href="/tags/arp欺骗/" style="font-size: 10.00px;">arp欺骗</a><a href="/tags/cain/" style="font-size: 10.00px;">cain</a><a href="/tags/dedecms漏洞/" style="font-size: 10.00px;">dedecms漏洞</a><a href="/tags/easyui/" style="font-size: 10.00px;">easyui</a><a href="/tags/eclipse/" style="font-size: 10.00px;">eclipse</a><a href="/tags/java/" style="font-size: 10.00px;">java</a><a href="/tags/linux arp欺骗/" style="font-size: 10.00px;">linux arp欺骗</a><a href="/tags/os x/" style="font-size: 10.00px;">os x</a><a href="/tags/php/" style="font-size: 13.33px;">php</a><a href="/tags/phpcmsv9漏洞/" style="font-size: 16.67px;">phpcmsv9漏洞</a><a href="/tags/phpcsm2008漏洞/" style="font-size: 10.00px;">phpcsm2008漏洞</a><a href="/tags/python/" style="font-size: 13.33px;">python</a><a href="/tags/thinkPHP漏洞/" style="font-size: 10.00px;">thinkPHP漏洞</a><a href="/tags/ubuntu/" style="font-size: 10.00px;">ubuntu</a><a href="/tags/web wifi认证/" style="font-size: 10.00px;">web wifi认证</a><a href="/tags/webshell/" style="font-size: 20.00px;">webshell</a><a href="/tags/window密码/" style="font-size: 10.00px;">window密码</a><a href="/tags/wordpress漏洞/" style="font-size: 13.33px;">wordpress漏洞</a><a href="/tags/workflow/" style="font-size: 10.00px;">workflow</a><a href="/tags/xUtils/" style="font-size: 10.00px;">xUtils</a><a href="/tags/互联网技术/" style="font-size: 10.00px;">互联网技术</a><a href="/tags/任意密码登录/" style="font-size: 10.00px;">任意密码登录</a><a href="/tags/任意读取文件漏洞/" style="font-size: 10.00px;">任意读取文件漏洞</a><a href="/tags/入侵/" style="font-size: 10.00px;">入侵</a><a href="/tags/后门/" style="font-size: 20.00px;">后门</a><a href="/tags/嗅探/" style="font-size: 10.00px;">嗅探</a><a href="/tags/图马/" style="font-size: 10.00px;">图马</a><a href="/tags/打飞机/" style="font-size: 10.00px;">打飞机</a><a href="/tags/注入漏洞/" style="font-size: 10.00px;">注入漏洞</a>
+  </div>
+</div>
+
+
+    	<footer id="footer" class="inner"><div class="copyright">
+  
+  &copy; 2014 Return
+  
+</div>
+
+
+<div style="position:relative; bottom: 23px">
+  <script src="http://s95.cnzz.com/stat.php?id=4287542&web_id=4287542&show=pic1" language="JavaScript">
+  </script>
+</div>
+
+
+</footer>
+    </aside>
+    
+    
+    <div id="hidden-navigationBar" class="navigationBar">
+      <a href="/">Return&#39;s Blog </a>
+    </div>
+    <div id="main-col" class="alignright">
+    <div id="wrapper">
+      
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title">使用.htaccess自定义404页面</h1>
+  
+
+      <time datetime="2012-07-01T03:51:14.000Z"><a href="/html/2012-07-01-使用-htaccess自定义404页面.html">7月 1 2012</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <h2 id="-">配置</h2>
+<p>httpd.conf对目录开启</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>AllowOverride <span class="keyword">All</span>
+</pre></td></tr></table></figure>
+
+<blockquote>
+<p>然后在目录里放一个.htaccess（.htaccess）</p>
+</blockquote>
+<p>在里面写</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="keyword"><span class="common">errorDocument</span></span> 404 /404.html（这个的内容根据你的情况改写）
+</pre></td></tr></table></figure>
+
+<p>可是有时候当你用IE浏览的时候会发现，这玩意压根就不跳转</p>
+<p>关键的地方就是这个html</p>
+<p>如果404.html的小于512字节的话，那么IE会认为这个错误页面不够“友好”，会忽视掉的，现在分享出来，遇到相同问题的朋友就知道原因了。</p>
+<p>附:</p>
+<blockquote>
+<p>.htaccess文件(或者”分布式配置文件”提供了针对目录改变配置的方法， 即，在一个特定的文档目录中放置一个包含一个或多个指令的文件， 以作用于此目录及其所有子目录。作为用户，所能使用的命令受到限制。管理员可以通过Apache的AllowOverride指令来设置。</p>
+</blockquote>
+<ul>
+<li><p>子目录中的指令会覆盖更高级目录或者主服务器配置文件中的指令。</p>
+</li>
+<li><p>.htaccess必须以ASCII模式上传，最好将其权限设置为644。</p>
+</li>
+<li><h2 id="-">错误文档的定位</h2>
+常用的客户端请求错误返回代码：<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="number">401</span> Authorization Required
+<span class="number">403</span> Forbidden
+<span class="number">404</span> <span class="keyword">Not</span> Found
+<span class="number">405</span> <span class="function"><span class="keyword">Method</span> <span class="title">Not</span> <span class="title">Allowed</span>
+408 <span class="title">Request</span> <span class="title">Timed</span> <span class="title">Out</span>
+411 <span class="title">Content</span> <span class="title">Length</span> <span class="title">Required</span>
+412 <span class="title">Precondition</span> <span class="title">Failed</span>
+413 <span class="title">Request</span> <span class="title">Entity</span> <span class="title">Too</span> <span class="title">Long</span>
+414 <span class="title">Request</span> <span class="title">URI</span> <span class="title">Too</span> <span class="title">Long</span>
+415 <span class="title">Unsupported</span> <span class="title">Media</span> <span class="title">Type</span>
+常见的服务器错误返回代码：
+500 <span class="title">Internal</span> <span class="title">Server</span> <span class="title">Error</span></span>
+</pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><a id="more"></a>
+用户可以利用.htaccess指定自己事先制作好的错误提醒页面。一般情况下，人们可以专门设立一个目录，例如errors放置这些页面。然后再.htaccess中，加入如下的指令：</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre>ErrorDocument <span class="number">404</span> /errors/notfound<span class="preprocessor">.html</span>
+ErrorDocument <span class="number">500</span> /errors/internalerror<span class="preprocessor">.html</span>
+</pre></td></tr></table></figure>
+
+<p>一条指令一行。上述第一条指令的意思是对于404，也就是没有找到所需要的文档的时候得显示页面为/errors目录下的notfound.html页面。不难看出语法格式为：</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>ErrorDocument 错误代码 <span class="regexp">/目录名/</span>文件名.扩展名
+</pre></td></tr></table></figure>
+
+<p>如果所需要提示的信息很少的话，不必专门制作页面，直接在指令中使用HTML号了，例如下面这个例子：</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="keyword"><span class="common">ErrorDocument</span></span> 401 ”
+</pre></td></tr></table></figure>
+
+<p>你没有权限访问该页面，请放弃！</p>
+<h3 id="-">文档访问的密码保护</h3>
+<p>要利用.htaccess对某个目录下的文档设定访问用户和对应的密码，首先要做的是生成一个.htpasswd的文本文档，例如：</p>
+<p>zheng:y4E7Ep8e7EYV</p>
+<p>这里密码经过加密，用户可以自己找些工具将密码加密成.htaccess支持的编码。该文档最好不要放在www目录下，建议放在www根目录文档之外，这样更为安全些。</p>
+<p>有了授权用户文档，可以在.htaccess中加入如下指令了：</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+</pre></td><td class="code"><pre>AuthUserFile <span class="built_in">.</span>htpasswd的服务器目录
+AuthGroupFile /dev/<span class="built_in">null</span> （需要授权访问的目录）
+AuthName EnterPassword
+AuthType Basic （授权类型）
+<span class="keyword">require</span> user wsabstract （允许访问的用户，如果希望表中所有用户都允许，可以使用 <span class="keyword">require</span> valid<span class="attribute">-user</span>）
+</pre></td></tr></table></figure>
+
+<blockquote>
+<p>注，括号部分为学习时候自己添加的注释</p>
+</blockquote>
+<h2 id="-ip-">拒绝来自某个IP的访问</h2>
+<p>如果我不想某个政府部门访问到我的站点的内容，那可以通过.htaccess中加入该部门的IP而将它们拒绝在外。
+例如：</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="keyword"><span class="common">order</span></span> allow,deny
+<span class="keyword"><span class="common">deny</span></span> from 210.10.56.32
+<span class="keyword"><span class="common">deny</span></span> from 219.5.45.
+<span class="keyword"><span class="common">allow</span></span> from <span class="literal">all</span>
+</pre></td></tr></table></figure>
+
+<p>第二行拒绝某个IP，第三行拒绝某个IP段，也就是219.5.45.0~219.2.45.255</p>
+<p>想要拒绝所有人？用deny from all好了。不止用IP，也可以用域名来设定。</p>
+<p>保护.htaccess文档</p>
+<p>在使用.htaccess来设置目录的密码保护时，它包含了密码文件的路径。从安全考虑，有必要把.htaccess也保护起来，不让别人看到其中的内容。虽然可以用其他方式做到这点，比如文档的权限。不过，.htaccess本身也能做到，只需加入如下的指令：</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+2
+</pre></td><td class="code"><pre><span class="keyword"><span class="common">order</span></span> allow,deny
+<span class="keyword"><span class="common">deny</span></span> from <span class="literal">all</span>
+</pre></td></tr></table></figure>
+
+<h2 id="url-">URL转向</h2>
+<p>我们可能对网站进行重新规划，将文档进行了迁移，或者更改了目录。这时候，来自搜索引擎或者其他网站链接过来的访问就可能出错。这种情况下，可以通过如下指令来完成旧的URL自动转向到新的地址：</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>Redirect <span class="regexp">/旧目录/</span>旧文档名 新文档的地址
+</pre></td></tr></table></figure>
+
+<p>或者整个目录的转向：</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>Redirect 旧目录 新目录
+</pre></td></tr></table></figure>
+
+<h2 id="-">改变缺省的首页文件</h2>
+<p>一般情况下缺省的首页文件名有default、index等。不过，有些时候目录中没有缺省文件，而是某个特定的文件名，比如在pmwiki中是pmwiki.php。这种情况下，要用户记住文件名来访问很麻烦。在.htaccess中可以轻易的设置新的缺省文件名：</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>DirectoryIndex 新的缺省文件名
+</pre></td></tr></table></figure>
+
+<p>也可以列出多个，顺序表明它们之间的优先级别，例如：</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>DirectoryIndex filename<span class="preprocessor">.html</span> index<span class="preprocessor">.cgi</span> index<span class="preprocessor">.pl</span> default<span class="preprocessor">.htm</span>
+</pre></td></tr></table></figure>
+
+<h2 id="-">防止盗链</h2>
+<p>如果不喜欢别人在他们的网页上连接自己的图片、文档的话，也可以通过htaccess的指令来做到。</p>
+<p>所需要的指令如下：</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre>RewriteEngine <span class="command"><span class="keyword">on</span></span>
+RewriteCond % !^$
+RewriteCond % !^<span class="keyword">http</span>://(www.)?creturn.cn…*$ [NC]
+RewriteRule .(gif|jpg)$ – [F]
+如果觉得让别人的页面开个天窗不好看，那可以用一张图片来代替：
+RewriteEngine <span class="command"><span class="keyword">on</span></span>
+RewriteCond % !^$
+RewriteCond % !^<span class="keyword">http</span>://(www.)?creturn.cn…*$ [NC]
+RewriteRule .(gif|jpg)$ <span class="keyword">http</span>://www.creturn.cn/替代图片文件名 [R,L]
+</pre></td></tr></table></figure>
+
+
+	 
+	     <p style="margin:20px 0; color:#9f9f9f; font-size:12px;">
+<span>Posted by <a style="color:#9f9f9f;" href="null"><strong>creturn</strong></a> - 7月 1 2012</span><br />
+<span style="line-height:13px;">如需转载，请注明： 本文来自 <a style="color:#9f9f9f;" href="http://creturn.com"><strong>Return&#39;s Blog </strong></a></span>
+</p>
+       	 
+      
+    </div>
+    <footer>
+      
+	 
+     		  
+  
+  <div class="categories">
+    <a href="/categories/技术文章/">技术文章</a>
+  </div>
+
+       		
+     		  
+       	 
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+</div>
+    </div>
+    <div class="tabbar" onload="divideTabBar()">
+	
+      <div class="tabbaritem"><a class="next" href="/">Home</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/archives/">Archives</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/about/">About</a></div>
+    
+</div>
+
+
+  </div>
+</body>
+</html>

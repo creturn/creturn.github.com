@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>dedecms漏洞 | Return&#39;s Blog </title>
+  <meta name="author" content="Return">
+  
+  <meta name="description" content="专注于互联网开发技术，注重网络安全技术，注重网络攻防技术，注重渗透测试技术，backtrack5渗透测试平台研究，软件开发，网页设计，网页制作，网站建设">
+  
+  
+  
+  <meta property="og:site_name" content="Return&#39;s Blog "/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+   <link rel="apple-touch-icon" href="/icon.png" />
+   <link rel="shortcut icon" href="/favicon.png" >
+   <link rel="alternate" href="http://www.creturn.com/atom.xml" title="Return&#39;s Blog " type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <div id="content" class="inner">
+    <aside id="sidebar" class="alignleft">
+      <div class="navigationBar">
+        <a href="/">Return&#39;s Blog </a>
+      </div>
+    	
+  <nav class="widget" id="menu">
+	<ul>
+    
+      <li class="cell"><a class="next" href="/">Home</a><li>
+    
+      <li class="cell"><a class="next" href="/archives/">Archives</a><li>
+    
+      <li class="cell"><a class="next" href="/about/">About</a><li>
+    
+    </ul>
+</nav>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/原创作品/">原创作品</a><small>30</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/">技术文章</a><small>23</small></li>
+  
+    <li><a href="/categories/技术文章/">技术文章</a><small>7</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/最新漏洞/">最新漏洞</a><small>3</small></li>
+  
+    <li><a href="/categories/技术文章/最新漏洞/">最新漏洞</a><small>2</small></li>
+  
+    <li><a href="/categories/最新漏洞/">最新漏洞</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Android/" style="font-size: 10.00px;">Android</a><a href="/tags/Backtrack5/" style="font-size: 10.00px;">Backtrack5</a><a href="/tags/Metasploit/" style="font-size: 10.00px;">Metasploit</a><a href="/tags/Mysql/" style="font-size: 10.00px;">Mysql</a><a href="/tags/Nginx解析漏洞/" style="font-size: 10.00px;">Nginx解析漏洞</a><a href="/tags/Return/" style="font-size: 10.00px;">Return</a><a href="/tags/ThinkPHP远程/" style="font-size: 10.00px;">ThinkPHP远程</a><a href="/tags/alfred/" style="font-size: 10.00px;">alfred</a><a href="/tags/android/" style="font-size: 13.33px;">android</a><a href="/tags/apache/" style="font-size: 10.00px;">apache</a><a href="/tags/armitage/" style="font-size: 10.00px;">armitage</a><a href="/tags/arp欺骗/" style="font-size: 10.00px;">arp欺骗</a><a href="/tags/cain/" style="font-size: 10.00px;">cain</a><a href="/tags/dedecms漏洞/" style="font-size: 10.00px;">dedecms漏洞</a><a href="/tags/easyui/" style="font-size: 10.00px;">easyui</a><a href="/tags/eclipse/" style="font-size: 10.00px;">eclipse</a><a href="/tags/java/" style="font-size: 10.00px;">java</a><a href="/tags/linux arp欺骗/" style="font-size: 10.00px;">linux arp欺骗</a><a href="/tags/os x/" style="font-size: 10.00px;">os x</a><a href="/tags/php/" style="font-size: 13.33px;">php</a><a href="/tags/phpcmsv9漏洞/" style="font-size: 16.67px;">phpcmsv9漏洞</a><a href="/tags/phpcsm2008漏洞/" style="font-size: 10.00px;">phpcsm2008漏洞</a><a href="/tags/python/" style="font-size: 13.33px;">python</a><a href="/tags/thinkPHP漏洞/" style="font-size: 10.00px;">thinkPHP漏洞</a><a href="/tags/ubuntu/" style="font-size: 10.00px;">ubuntu</a><a href="/tags/web wifi认证/" style="font-size: 10.00px;">web wifi认证</a><a href="/tags/webshell/" style="font-size: 20.00px;">webshell</a><a href="/tags/window密码/" style="font-size: 10.00px;">window密码</a><a href="/tags/wordpress漏洞/" style="font-size: 13.33px;">wordpress漏洞</a><a href="/tags/workflow/" style="font-size: 10.00px;">workflow</a><a href="/tags/xUtils/" style="font-size: 10.00px;">xUtils</a><a href="/tags/互联网技术/" style="font-size: 10.00px;">互联网技术</a><a href="/tags/任意密码登录/" style="font-size: 10.00px;">任意密码登录</a><a href="/tags/任意读取文件漏洞/" style="font-size: 10.00px;">任意读取文件漏洞</a><a href="/tags/入侵/" style="font-size: 10.00px;">入侵</a><a href="/tags/后门/" style="font-size: 20.00px;">后门</a><a href="/tags/嗅探/" style="font-size: 10.00px;">嗅探</a><a href="/tags/图马/" style="font-size: 10.00px;">图马</a><a href="/tags/打飞机/" style="font-size: 10.00px;">打飞机</a><a href="/tags/注入漏洞/" style="font-size: 10.00px;">注入漏洞</a>
+  </div>
+</div>
+
+
+    	<footer id="footer" class="inner"><div class="copyright">
+  
+  &copy; 2014 Return
+  
+</div>
+
+
+<div style="position:relative; bottom: 23px">
+  <script src="http://s95.cnzz.com/stat.php?id=4287542&web_id=4287542&show=pic1" language="JavaScript">
+  </script>
+</div>
+
+
+</footer>
+    </aside>
+    
+    
+    <div id="hidden-navigationBar" class="navigationBar">
+      <a href="/">Return&#39;s Blog </a>
+    </div>
+    <div id="main-col" class="alignright">
+    <div id="wrapper">
+      
+<h2 class="archive-title tag">dedecms漏洞</h2>
+
+
+  
+    
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title"><a href="/html/2012-07-19-dedecms-v5-7-注入漏洞利用.html">dedecms v5.7 注入漏洞利用</a></h1>
+  
+
+      <time datetime="2012-07-19T15:45:46.000Z"><a href="/html/2012-07-19-dedecms-v5-7-注入漏洞利用.html">7月 19 2012</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <p>dedecms 的这个漏洞已经是老漏洞了，只不过今天同学给我说他明天去面试</p>
+<p>所以就顺手给他去面试的那家公司做个安全测试，就把过程记录下来吧：</p>
+<p>首先打开目标站点：</p>
+<p>右击查看网站源代码，发现几个比较特殊的地方：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2012/07/dede_source.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/dede_source.png" alt="" title="dede_source"></a></p>
+<p>可以看到根目录有a文件夹和uploads，对于dedecms熟悉的人都知道，dedecms有a和uploads/allimg目录，</p>
+<p>抱着试试的心态目标站点后面加上member看看，一般做二次开发不带会员中心的话member基本还是原因，</p>
+<p>也就能判断出目标系统：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2012/07/dede_cms.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/dede_cms.png" alt="" title="dede_cms"></a></p>
+<p>可以清楚的看到目标是dedecms系统
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/html/2012-07-19-dedecms-v5-7-注入漏洞利用.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+
+  <nav id="pagination">
+  
+  
+</nav>
+</div>
+    </div>
+    <div class="tabbar" onload="divideTabBar()">
+	
+      <div class="tabbaritem"><a class="next" href="/">Home</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/archives/">Archives</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/about/">About</a></div>
+    
+</div>
+
+
+  </div>
+</body>
+</html>

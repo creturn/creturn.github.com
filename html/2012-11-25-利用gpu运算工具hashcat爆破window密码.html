@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>利用GPU运算工具hashcat爆破window密码 | Return&#39;s Blog </title>
+  <meta name="author" content="Return">
+  
+  <meta name="description" content="专注于互联网开发技术，注重网络安全技术，注重网络攻防技术，注重渗透测试技术，backtrack5渗透测试平台研究，软件开发，网页设计，网页制作，网站建设">
+  
+  
+  <meta property="og:title" content="利用GPU运算工具hashcat爆破window密码"/>
+  <meta property="og:site_name" content="Return&#39;s Blog "/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+   <link rel="apple-touch-icon" href="/icon.png" />
+   <link rel="shortcut icon" href="/favicon.png" >
+   <link rel="alternate" href="http://www.creturn.com/atom.xml" title="Return&#39;s Blog " type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <div id="content" class="inner">
+    <aside id="sidebar" class="alignleft">
+      <div class="navigationBar">
+        <a href="/">Return&#39;s Blog </a>
+      </div>
+    	
+  <nav class="widget" id="menu">
+	<ul>
+    
+      <li class="cell"><a class="next" href="/">Home</a><li>
+    
+      <li class="cell"><a class="next" href="/archives/">Archives</a><li>
+    
+      <li class="cell"><a class="next" href="/about/">About</a><li>
+    
+    </ul>
+</nav>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/原创作品/">原创作品</a><small>30</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/">技术文章</a><small>23</small></li>
+  
+    <li><a href="/categories/技术文章/">技术文章</a><small>7</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/最新漏洞/">最新漏洞</a><small>3</small></li>
+  
+    <li><a href="/categories/技术文章/最新漏洞/">最新漏洞</a><small>2</small></li>
+  
+    <li><a href="/categories/最新漏洞/">最新漏洞</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Android/" style="font-size: 10.00px;">Android</a><a href="/tags/Backtrack5/" style="font-size: 10.00px;">Backtrack5</a><a href="/tags/Metasploit/" style="font-size: 10.00px;">Metasploit</a><a href="/tags/Mysql/" style="font-size: 10.00px;">Mysql</a><a href="/tags/Nginx解析漏洞/" style="font-size: 10.00px;">Nginx解析漏洞</a><a href="/tags/Return/" style="font-size: 10.00px;">Return</a><a href="/tags/ThinkPHP远程/" style="font-size: 10.00px;">ThinkPHP远程</a><a href="/tags/alfred/" style="font-size: 10.00px;">alfred</a><a href="/tags/android/" style="font-size: 13.33px;">android</a><a href="/tags/apache/" style="font-size: 10.00px;">apache</a><a href="/tags/armitage/" style="font-size: 10.00px;">armitage</a><a href="/tags/arp欺骗/" style="font-size: 10.00px;">arp欺骗</a><a href="/tags/cain/" style="font-size: 10.00px;">cain</a><a href="/tags/dedecms漏洞/" style="font-size: 10.00px;">dedecms漏洞</a><a href="/tags/easyui/" style="font-size: 10.00px;">easyui</a><a href="/tags/eclipse/" style="font-size: 10.00px;">eclipse</a><a href="/tags/java/" style="font-size: 10.00px;">java</a><a href="/tags/linux arp欺骗/" style="font-size: 10.00px;">linux arp欺骗</a><a href="/tags/os x/" style="font-size: 10.00px;">os x</a><a href="/tags/php/" style="font-size: 13.33px;">php</a><a href="/tags/phpcmsv9漏洞/" style="font-size: 16.67px;">phpcmsv9漏洞</a><a href="/tags/phpcsm2008漏洞/" style="font-size: 10.00px;">phpcsm2008漏洞</a><a href="/tags/python/" style="font-size: 13.33px;">python</a><a href="/tags/thinkPHP漏洞/" style="font-size: 10.00px;">thinkPHP漏洞</a><a href="/tags/ubuntu/" style="font-size: 10.00px;">ubuntu</a><a href="/tags/web wifi认证/" style="font-size: 10.00px;">web wifi认证</a><a href="/tags/webshell/" style="font-size: 20.00px;">webshell</a><a href="/tags/window密码/" style="font-size: 10.00px;">window密码</a><a href="/tags/wordpress漏洞/" style="font-size: 13.33px;">wordpress漏洞</a><a href="/tags/workflow/" style="font-size: 10.00px;">workflow</a><a href="/tags/xUtils/" style="font-size: 10.00px;">xUtils</a><a href="/tags/互联网技术/" style="font-size: 10.00px;">互联网技术</a><a href="/tags/任意密码登录/" style="font-size: 10.00px;">任意密码登录</a><a href="/tags/任意读取文件漏洞/" style="font-size: 10.00px;">任意读取文件漏洞</a><a href="/tags/入侵/" style="font-size: 10.00px;">入侵</a><a href="/tags/后门/" style="font-size: 20.00px;">后门</a><a href="/tags/嗅探/" style="font-size: 10.00px;">嗅探</a><a href="/tags/图马/" style="font-size: 10.00px;">图马</a><a href="/tags/打飞机/" style="font-size: 10.00px;">打飞机</a><a href="/tags/注入漏洞/" style="font-size: 10.00px;">注入漏洞</a>
+  </div>
+</div>
+
+
+    	<footer id="footer" class="inner"><div class="copyright">
+  
+  &copy; 2014 Return
+  
+</div>
+
+
+<div style="position:relative; bottom: 23px">
+  <script src="http://s95.cnzz.com/stat.php?id=4287542&web_id=4287542&show=pic1" language="JavaScript">
+  </script>
+</div>
+
+
+</footer>
+    </aside>
+    
+    
+    <div id="hidden-navigationBar" class="navigationBar">
+      <a href="/">Return&#39;s Blog </a>
+    </div>
+    <div id="main-col" class="alignright">
+    <div id="wrapper">
+      
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title">利用GPU运算工具hashcat爆破window密码</h1>
+  
+
+      <time datetime="2012-11-25T04:55:47.000Z"><a href="/html/2012-11-25-利用gpu运算工具hashcat爆破window密码.html">11月 25 2012</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <p>今天介绍一款利用显卡超强运算能力进行爆破密码的工具hashcat，用它来进行爆破window密码</p>
+<p>当然他支持的不仅仅是window SAM密码的爆破。</p>
+<p>我本机环境和显卡信息如图：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2013/11/224255j1foiui0lrc10rsh.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224255j1foiui0lrc10rsh.png" alt="224255j1foiui0lrc10rsh"></a></p>
+<a id="more"></a>
+
+<p>hashcat的下载地址为：<a href="http://hashcat.net/files_legacy/hashcat-0.40.7z" target="_blank">http://hashcat.net/files_legacy/hashcat-0.40.7z</a> 这个为非gui，如果需要gui的可以去官网下载gui版本</p>
+<p>解压后可以看到如图内容：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2013/11/224256bl2n8535y5pvl87n.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224256bl2n8535y5pvl87n.png" alt="224256bl2n8535y5pvl87n"></a></p>
+<p>其中window和linux对应的版本都有。我是64位ubuntu 那么就用hashcat-cli64.bin</p>
+<p>为了方便使用我做了一个软链接：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>ln <span class="attribute">-s</span> /home/<span class="keyword">return</span>/soft/hack/hashcat/hashcat<span class="attribute">-cli64</span><span class="built_in">.</span>bin /usr/bin/hashcat
+</pre></td></tr></table></figure>
+
+<p>这样打开终端后不管在什么位置直接输入hashcat就行了，看看它支持的密码类型：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2013/11/224300uew6cie9zieq7cbq.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224300uew6cie9zieq7cbq.png" alt="224300uew6cie9zieq7cbq"></a></p>
+<p>其中红色部分就是sam加密类型</p>
+<p>我们先看看hashcat的运算能力怎么。我们用php的md5加密6个z试试看看它进行爆破速度怎么样：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="preprocessor">&lt;?php</span>
+	file_put_contents(<span class="string">'hashcat.txt'</span>,md5(<span class="string">'zzzzzz'</span>);
+<span class="preprocessor">?&gt;</span>
+</pre></td></tr></table></figure>
+
+<p>上面代码保存成x.php ,终端下php x.php 会在当前目录下生成hashcat.txt 里面就保存了zzzzz的md5值：</p>
+<p>453e41d218e071ccfb2d1c99ce23906a</p>
+<p>然后终端输入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">time</span> hashcat -<span class="operator">a</span> <span class="number">3</span> -m <span class="number">0</span> hashcat.txt ?l?l?l?l?l?l
+</pre></td></tr></table></figure>
+
+<p>解释下命令：time 用来统计执行这条命令耗费的时间，-a 是破解模式 -m 密码类型 后面的？l 是密码的配置符号。？l为小写字符a-z</p>
+<p>结果如图：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2013/11/224303cnhu6wowugpmlpm6.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224303cnhu6wowugpmlpm6.png" alt="224303cnhu6wowugpmlpm6"></a></p>
+<p>可以看到我标记出来的：</p>
+<p>1.当前的匹配模式  2.破解结果 3.time 计算出耗费的时间</p>
+<p>可以看到穷举6位字母用时14秒效果已经很不错了。当然这个也跟自己的显卡性能有关</p>
+<p>接下来回到正题，看看如果破解window密码。破解之前我们还需要两个工具bkhive,和samdump2</p>
+<p>ubuntu下执行如下命令即可安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="built_in">sudo</span> apt-get install bkhive
+</pre></td></tr></table></figure>
+
+<p>好了。继续，看下我的分区情况。因为现在在ubuntu下我的window在c盘第一分区上装着，如图：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2013/11/224307iz3gs432za1vawbx.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224307iz3gs432za1vawbx.png" alt="224307iz3gs432za1vawbx"></a></p>
+<p>挂在sda1分区到我的/win</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="keyword">mkdir</span> /win &amp; mount /dev/sda1 /win
+</pre></td></tr></table></figure>
+
+<p>上面命令是在根目录下创建win文件夹并且挂载sda1</p>
+<p>看看win下是否挂载成功，如果成功了，可以看到win目录下有window系统c盘（系统盘）的内容</p>
+<p><a href="http://www.creturn.com/asset/uploads/2013/11/224310ayqj3g611m6tgy11.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224310ayqj3g611m6tgy11.png" alt="224310ayqj3g611m6tgy11"></a></p>
+<p>拷贝：cp /win/Windows/System32/config/SYSTEM  和SAM 文件到当前文件夹</p>
+<p>然后执行命令如下图：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2013/11/224313ubvwmmtwwfyxlttg.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224313ubvwmmtwwfyxlttg.png" alt="224313ubvwmmtwwfyxlttg"></a></p>
+<p>命令解释：</p>
+<blockquote>
+<p>1和2是拷贝 SYSTEM和SAM到当前文件夹</p>
+<p>3.根据SYSTEM文件提取bootkey</p>
+<p>4.利用bootkey提取出hash值</p>
+</blockquote>
+<p>提取出来的哈是值如图：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2013/11/224314lf5dy5dq3b95zkkd.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224314lf5dy5dq3b95zkkd.png" alt="224314lf5dy5dq3b95zkkd"></a></p>
+<p>window的hash密文其实就是最后两个‘：’号之间的数据，到这里拿到值后其实就可以去网上看下有已经破解的密文了没</p>
+<p>可以看如图，已经找到密码了：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2013/11/224317qpwypa77l2gly2zv.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224317qpwypa77l2gly2zv.png" alt="224317qpwypa77l2gly2zv"></a></p>
+<p>那么接下来我们爆破。取出密文，也就是最后两个‘：’之间的数据保存为pwd.txt</p>
+<p>执行如下图命令：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2013/11/224318amdzfb6wrydsiebr.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224318amdzfb6wrydsiebr.png" alt="224318amdzfb6wrydsiebr"></a></p>
+<p><a href="http://www.creturn.com/asset/uploads/2013/11/224320t0idau0t1r5edyuu.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224320t0idau0t1r5edyuu.png" alt="224320t0idau0t1r5edyuu"></a></p>
+<p>中机会有提示确认信息，输入大写YES就行</p>
+<p>命令解释：</p>
+<blockquote>
+<p>hashcat后面的参数 -a 3 破解模式 -m 1000 哈是类型 后面的？l?l是匹配符由于我的密码有些复杂所以前面我补上了几位明文，这样能提高点速度（写文章么，总不能等半天）。</p>
+<ol>
+<li>可以看到已经破解出来  </li>
+<li>用命令cat来查看已经破解出来的密码</li>
+</ol>
+</blockquote>
+<p>这种是基于穷举的，也可以用字典。命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>hashcat -a <span class="number">0</span> -m <span class="number">0</span> hashfile<span class="preprocessor">.txt</span> passwordlist<span class="preprocessor">.txt</span>
+</pre></td></tr></table></figure>
+
+<blockquote>
+<p>解释下这条命令。-a 0利用字典破解 -m是hash类型0为md5 hashfile.txt为密文，passwordlist.txt为字典，这里就不演示了</p>
+</blockquote>
+
+	 
+	     <p style="margin:20px 0; color:#9f9f9f; font-size:12px;">
+<span>Posted by <a style="color:#9f9f9f;" href="null"><strong>creturn</strong></a> - 11月 25 2012</span><br />
+<span style="line-height:13px;">如需转载，请注明： 本文来自 <a style="color:#9f9f9f;" href="http://creturn.com"><strong>Return&#39;s Blog </strong></a></span>
+</p>
+       	 
+      
+    </div>
+    <footer>
+      
+	 
+     		  
+  
+  <div class="categories">
+    <a href="/categories/原创作品/">原创作品</a>, <a href="/categories/原创作品/技术文章/">技术文章</a>
+  </div>
+
+       		
+  
+  <div class="tags">
+    <a href="/tags/window密码/">window密码</a>, <a href="/tags/爆破/">爆破</a>
+  </div>
+
+     		  
+       	 
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+</div>
+    </div>
+    <div class="tabbar" onload="divideTabBar()">
+	
+      <div class="tabbaritem"><a class="next" href="/">Home</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/archives/">Archives</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/about/">About</a></div>
+    
+</div>
+
+
+  </div>
+</body>
+</html>

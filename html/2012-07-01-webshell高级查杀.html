@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>webshell高级查杀 | Return&#39;s Blog </title>
+  <meta name="author" content="Return">
+  
+  <meta name="description" content="专注于互联网开发技术，注重网络安全技术，注重网络攻防技术，注重渗透测试技术，backtrack5渗透测试平台研究，软件开发，网页设计，网页制作，网站建设">
+  
+  
+  <meta property="og:title" content="webshell高级查杀"/>
+  <meta property="og:site_name" content="Return&#39;s Blog "/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+   <link rel="apple-touch-icon" href="/icon.png" />
+   <link rel="shortcut icon" href="/favicon.png" >
+   <link rel="alternate" href="http://www.creturn.com/atom.xml" title="Return&#39;s Blog " type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <div id="content" class="inner">
+    <aside id="sidebar" class="alignleft">
+      <div class="navigationBar">
+        <a href="/">Return&#39;s Blog </a>
+      </div>
+    	
+  <nav class="widget" id="menu">
+	<ul>
+    
+      <li class="cell"><a class="next" href="/">Home</a><li>
+    
+      <li class="cell"><a class="next" href="/archives/">Archives</a><li>
+    
+      <li class="cell"><a class="next" href="/about/">About</a><li>
+    
+    </ul>
+</nav>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/原创作品/">原创作品</a><small>30</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/">技术文章</a><small>23</small></li>
+  
+    <li><a href="/categories/技术文章/">技术文章</a><small>7</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/最新漏洞/">最新漏洞</a><small>3</small></li>
+  
+    <li><a href="/categories/技术文章/最新漏洞/">最新漏洞</a><small>2</small></li>
+  
+    <li><a href="/categories/最新漏洞/">最新漏洞</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Android/" style="font-size: 10.00px;">Android</a><a href="/tags/Backtrack5/" style="font-size: 10.00px;">Backtrack5</a><a href="/tags/Metasploit/" style="font-size: 10.00px;">Metasploit</a><a href="/tags/Mysql/" style="font-size: 10.00px;">Mysql</a><a href="/tags/Nginx解析漏洞/" style="font-size: 10.00px;">Nginx解析漏洞</a><a href="/tags/Return/" style="font-size: 10.00px;">Return</a><a href="/tags/ThinkPHP远程/" style="font-size: 10.00px;">ThinkPHP远程</a><a href="/tags/alfred/" style="font-size: 10.00px;">alfred</a><a href="/tags/android/" style="font-size: 13.33px;">android</a><a href="/tags/apache/" style="font-size: 10.00px;">apache</a><a href="/tags/armitage/" style="font-size: 10.00px;">armitage</a><a href="/tags/arp欺骗/" style="font-size: 10.00px;">arp欺骗</a><a href="/tags/cain/" style="font-size: 10.00px;">cain</a><a href="/tags/dedecms漏洞/" style="font-size: 10.00px;">dedecms漏洞</a><a href="/tags/easyui/" style="font-size: 10.00px;">easyui</a><a href="/tags/eclipse/" style="font-size: 10.00px;">eclipse</a><a href="/tags/java/" style="font-size: 10.00px;">java</a><a href="/tags/linux arp欺骗/" style="font-size: 10.00px;">linux arp欺骗</a><a href="/tags/os x/" style="font-size: 10.00px;">os x</a><a href="/tags/php/" style="font-size: 13.33px;">php</a><a href="/tags/phpcmsv9漏洞/" style="font-size: 16.67px;">phpcmsv9漏洞</a><a href="/tags/phpcsm2008漏洞/" style="font-size: 10.00px;">phpcsm2008漏洞</a><a href="/tags/python/" style="font-size: 13.33px;">python</a><a href="/tags/thinkPHP漏洞/" style="font-size: 10.00px;">thinkPHP漏洞</a><a href="/tags/ubuntu/" style="font-size: 10.00px;">ubuntu</a><a href="/tags/web wifi认证/" style="font-size: 10.00px;">web wifi认证</a><a href="/tags/webshell/" style="font-size: 20.00px;">webshell</a><a href="/tags/window密码/" style="font-size: 10.00px;">window密码</a><a href="/tags/wordpress漏洞/" style="font-size: 13.33px;">wordpress漏洞</a><a href="/tags/workflow/" style="font-size: 10.00px;">workflow</a><a href="/tags/xUtils/" style="font-size: 10.00px;">xUtils</a><a href="/tags/互联网技术/" style="font-size: 10.00px;">互联网技术</a><a href="/tags/任意密码登录/" style="font-size: 10.00px;">任意密码登录</a><a href="/tags/任意读取文件漏洞/" style="font-size: 10.00px;">任意读取文件漏洞</a><a href="/tags/入侵/" style="font-size: 10.00px;">入侵</a><a href="/tags/后门/" style="font-size: 20.00px;">后门</a><a href="/tags/嗅探/" style="font-size: 10.00px;">嗅探</a><a href="/tags/图马/" style="font-size: 10.00px;">图马</a><a href="/tags/打飞机/" style="font-size: 10.00px;">打飞机</a><a href="/tags/注入漏洞/" style="font-size: 10.00px;">注入漏洞</a>
+  </div>
+</div>
+
+
+    	<footer id="footer" class="inner"><div class="copyright">
+  
+  &copy; 2014 Return
+  
+</div>
+
+
+<div style="position:relative; bottom: 23px">
+  <script src="http://s95.cnzz.com/stat.php?id=4287542&web_id=4287542&show=pic1" language="JavaScript">
+  </script>
+</div>
+
+
+</footer>
+    </aside>
+    
+    
+    <div id="hidden-navigationBar" class="navigationBar">
+      <a href="/">Return&#39;s Blog </a>
+    </div>
+    <div id="main-col" class="alignright">
+    <div id="wrapper">
+      
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title">webshell高级查杀</h1>
+  
+
+      <time datetime="2012-06-30T18:13:29.000Z"><a href="/html/2012-07-01-webshell高级查杀.html">7月 1 2012</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <h2 id="-">很多人一直注重于攻击，而轻视于防御。</h2>
+<blockquote>
+<p>攻击在于创新，防御在于全面。</p>
+<p>用计算机的术语来说，攻是个单线程任务，你单核cpu频率越高，则效果愈好。</p>
+<p>防则是个多线程任务，你cpu核心越多，则效果俞佳。</p>
+</blockquote>
+<h2 id="-webshell-">下面说webshell的查杀</h2>
+<ul>
+<li><p>其实和pc一样，如安卓的恶意捆绑木马 和linux的恶意镜像源。一样的道路，web也要过一遍，pc端杀毒也是几个阶段。</p>
+</li>
+<li><p>从最初的专杀到特征码查杀再到基于行为的查杀（启发式查杀），再到最近炒得火热的云查杀。</p>
+</li>
+<li><p>说句题外话：所谓的云查杀更像是基于网络的特征码查杀。</p>
+</li>
+<li><p>同理：服务器上的webshell查杀也需要走特征码的路线，在现在硬件水平高于网络通信带宽的情况下，特征码还是非常必要的，接下来的就是讲webshell的特征码问题。</p>
+<a id="more"></a></li>
+<li><p>依据pc端病毒特征码的原理：根据执行文件如PE文件，从各个段提出多个特征码进行多对一的映射定位（这个主要是为了防止类此myccl之类的过免杀），这种提取的方式有很多种，大部分高效的做法还是经验丰富的病毒分析师凭经验定位特征码。</p>
+</li>
+<li><p>如PC端病毒特征码类似，但又不尽相同，pc端的病毒是以执行文件存在的，提取特征码只是在机器码-反汇编代码的基础上进行定位的。</p>
+</li>
+<li><p>而webshell是以源码的形式进行定位。机器码是最底层的语言，定的很死，比如我们od中常用的int3 就是0cch一一对应，不会再变。</p>
+</li>
+<li><p>而webshell使用高级脚本语言，高级语言的写法是存在多样性，如php中的各种字符串操作函数，这无疑增加了定位特征码的难度。</p>
+</li>
+<li><p>其实，现实是这样的对于大马的查杀是相对容易的，无论php，asp,.net的大马，他们中调用的一些函数是普通脚本代码不会用到，所以可以以这些特殊函数为正则匹配规则，进行匹配。（大部分的服务器安全软件也是这样做的）当然这样做的结果，会出现误杀的情况，因此要借用多重特征码进行匹配。一些做免杀的朋友，可能就笑了，这太好过了，直接做下字符串拆分，然后在连接，或者写个加解密，再或者加混淆代码轻松就过了。</p>
+</li>
+</ul>
+<ul>
+<li><p>这样理论上是对的，但是实际中忽略了电脑硬件的能力，对于2^32的运算一般配置的电脑也不会超过10秒，对于各种字符串加解密我们可以对与加解密运算的字符进行匹配，然后查杀设计要加入语义分析，如果学过编译原理的应该熟悉，对匹配到的字符串加减操作进行还原进行最终的匹配。</p>
+</li>
+<li><p>对于一句话木马的查杀则比较麻烦，因为变异的一句话木马有些是用的web应用程序正常调用的函数，再加上些变形，查杀是比较棘手，这种查杀则需要进行大量的样本收集，对其进行特征码提取。</p>
+</li>
+<li><p>特征码的提取可采用统计学中的采样方法，取一定数量的样本（包括正常样本和网马样本），对其进行异样提取，再对各类样本进行同样提取，再通过出现概率在进行添加。最终生成特征码样本。</p>
+</li>
+</ul>
+<p>这样基本对已知存在的一句话木马匹配到。</p>
+<p>对于特征码的匹配算法尚在测试中。</p>
+<p>欢迎提供更多的webshell样本.</p>
+<p>原创作者：livers   blog:   <a href="http://livers.sinaapp.com" target="_blank">http://livers.sinaapp.com</a></p>
+
+	 
+	     <p style="margin:20px 0; color:#9f9f9f; font-size:12px;">
+<span>Posted by <a style="color:#9f9f9f;" href="null"><strong>creturn</strong></a> - 7月 1 2012</span><br />
+<span style="line-height:13px;">如需转载，请注明： 本文来自 <a style="color:#9f9f9f;" href="http://creturn.com"><strong>Return&#39;s Blog </strong></a></span>
+</p>
+       	 
+      
+    </div>
+    <footer>
+      
+	 
+     		  
+  
+  <div class="categories">
+    <a href="/categories/技术文章/">技术文章</a>
+  </div>
+
+       		
+  
+  <div class="tags">
+    <a href="/tags/Return/">Return</a>, <a href="/tags/webshell/">webshell</a>, <a href="/tags/入侵/">入侵</a>, <a href="/tags/渗透/">渗透</a>
+  </div>
+
+     		  
+       	 
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+</div>
+    </div>
+    <div class="tabbar" onload="divideTabBar()">
+	
+      <div class="tabbaritem"><a class="next" href="/">Home</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/archives/">Archives</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/about/">About</a></div>
+    
+</div>
+
+
+  </div>
+</body>
+</html>

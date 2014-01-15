@@ -1,0 +1,669 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>技术文章 | Return&#39;s Blog </title>
+  <meta name="author" content="Return">
+  
+  <meta name="description" content="专注于互联网开发技术，注重网络安全技术，注重网络攻防技术，注重渗透测试技术，backtrack5渗透测试平台研究，软件开发，网页设计，网页制作，网站建设">
+  
+  
+  
+  <meta property="og:site_name" content="Return&#39;s Blog "/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+   <link rel="apple-touch-icon" href="/icon.png" />
+   <link rel="shortcut icon" href="/favicon.png" >
+   <link rel="alternate" href="http://www.creturn.com/atom.xml" title="Return&#39;s Blog " type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <div id="content" class="inner">
+    <aside id="sidebar" class="alignleft">
+      <div class="navigationBar">
+        <a href="/">Return&#39;s Blog </a>
+      </div>
+    	
+  <nav class="widget" id="menu">
+	<ul>
+    
+      <li class="cell"><a class="next" href="/">Home</a><li>
+    
+      <li class="cell"><a class="next" href="/archives/">Archives</a><li>
+    
+      <li class="cell"><a class="next" href="/about/">About</a><li>
+    
+    </ul>
+</nav>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/原创作品/">原创作品</a><small>30</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/">技术文章</a><small>23</small></li>
+  
+    <li><a href="/categories/技术文章/">技术文章</a><small>7</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/最新漏洞/">最新漏洞</a><small>3</small></li>
+  
+    <li><a href="/categories/技术文章/最新漏洞/">最新漏洞</a><small>2</small></li>
+  
+    <li><a href="/categories/最新漏洞/">最新漏洞</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Android/" style="font-size: 10.00px;">Android</a><a href="/tags/Backtrack5/" style="font-size: 10.00px;">Backtrack5</a><a href="/tags/Metasploit/" style="font-size: 10.00px;">Metasploit</a><a href="/tags/Mysql/" style="font-size: 10.00px;">Mysql</a><a href="/tags/Nginx解析漏洞/" style="font-size: 10.00px;">Nginx解析漏洞</a><a href="/tags/Return/" style="font-size: 10.00px;">Return</a><a href="/tags/ThinkPHP远程/" style="font-size: 10.00px;">ThinkPHP远程</a><a href="/tags/alfred/" style="font-size: 10.00px;">alfred</a><a href="/tags/android/" style="font-size: 13.33px;">android</a><a href="/tags/apache/" style="font-size: 10.00px;">apache</a><a href="/tags/armitage/" style="font-size: 10.00px;">armitage</a><a href="/tags/arp欺骗/" style="font-size: 10.00px;">arp欺骗</a><a href="/tags/cain/" style="font-size: 10.00px;">cain</a><a href="/tags/dedecms漏洞/" style="font-size: 10.00px;">dedecms漏洞</a><a href="/tags/easyui/" style="font-size: 10.00px;">easyui</a><a href="/tags/eclipse/" style="font-size: 10.00px;">eclipse</a><a href="/tags/java/" style="font-size: 10.00px;">java</a><a href="/tags/linux arp欺骗/" style="font-size: 10.00px;">linux arp欺骗</a><a href="/tags/os x/" style="font-size: 10.00px;">os x</a><a href="/tags/php/" style="font-size: 13.33px;">php</a><a href="/tags/phpcmsv9漏洞/" style="font-size: 16.67px;">phpcmsv9漏洞</a><a href="/tags/phpcsm2008漏洞/" style="font-size: 10.00px;">phpcsm2008漏洞</a><a href="/tags/python/" style="font-size: 13.33px;">python</a><a href="/tags/thinkPHP漏洞/" style="font-size: 10.00px;">thinkPHP漏洞</a><a href="/tags/ubuntu/" style="font-size: 10.00px;">ubuntu</a><a href="/tags/web wifi认证/" style="font-size: 10.00px;">web wifi认证</a><a href="/tags/webshell/" style="font-size: 20.00px;">webshell</a><a href="/tags/window密码/" style="font-size: 10.00px;">window密码</a><a href="/tags/wordpress漏洞/" style="font-size: 13.33px;">wordpress漏洞</a><a href="/tags/workflow/" style="font-size: 10.00px;">workflow</a><a href="/tags/xUtils/" style="font-size: 10.00px;">xUtils</a><a href="/tags/互联网技术/" style="font-size: 10.00px;">互联网技术</a><a href="/tags/任意密码登录/" style="font-size: 10.00px;">任意密码登录</a><a href="/tags/任意读取文件漏洞/" style="font-size: 10.00px;">任意读取文件漏洞</a><a href="/tags/入侵/" style="font-size: 10.00px;">入侵</a><a href="/tags/后门/" style="font-size: 20.00px;">后门</a><a href="/tags/嗅探/" style="font-size: 10.00px;">嗅探</a><a href="/tags/图马/" style="font-size: 10.00px;">图马</a><a href="/tags/打飞机/" style="font-size: 10.00px;">打飞机</a><a href="/tags/注入漏洞/" style="font-size: 10.00px;">注入漏洞</a>
+  </div>
+</div>
+
+
+    	<footer id="footer" class="inner"><div class="copyright">
+  
+  &copy; 2014 Return
+  
+</div>
+
+
+<div style="position:relative; bottom: 23px">
+  <script src="http://s95.cnzz.com/stat.php?id=4287542&web_id=4287542&show=pic1" language="JavaScript">
+  </script>
+</div>
+
+
+</footer>
+    </aside>
+    
+    
+    <div id="hidden-navigationBar" class="navigationBar">
+      <a href="/">Return&#39;s Blog </a>
+    </div>
+    <div id="main-col" class="alignright">
+    <div id="wrapper">
+      
+<h2 class="archive-title category">技术文章</h2>
+
+
+  
+    
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title"><a href="/html/2012-09-07-渗透之密码破解.html">渗透之密码破解</a></h1>
+  
+
+      <time datetime="2012-09-06T17:38:09.000Z"><a href="/html/2012-09-07-渗透之密码破解.html">9月 7 2012</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <p>本文转自：法客 作者：杀猪刀</p>
+<p>习惯了，睡觉去法客看看有没有好的文章看看，今天发现这个文章相当不错，所以转载之~~</p>
+<h1 id="-">一、系统密码破解篇：</h1>
+<p>1） Windows系统密码破解</p>
+<p>说起系统密码，估计玩安全比较早的人都知道04-07年那一阵一个啊D工具包就能够扫出一大堆肉鸡，
+但是对于牛逼的XX们来说这显然是不够用的，于是慢慢到后来就有了各种XX论坛、XX小组自动抓鸡工具，后来360的崛起，
+免费的杀软如春笋般冒出才慢慢止住势头，那么对于Windows系统账号密码破解，工具很多，主流的有：
+啊D网络工具包
+NTScan
+Windows系统密码破解的流程是：</p>
+<ol>
+<li>通过扫描端口确定对方开启了IPC$</li>
+<li>通过工具穷举密码直到正确的密码</li>
+<li>获得正确的密码后通过远程任务计划开启进程等（最原始最土的做法）很明显这种方法一般是作为菜鸟入门才使用的，记得当时分析自动抓鸡才发现，使用了WMIC管理规范，原来是一段WMIC脚本自动HTTP种植木马，到目前为止所谓自动化135抓鸡工具也是此原理和代码；</li>
+</ol>
+<p>近年来还流行一种所谓RDP远程破解抓肉鸡的方法，原理很简单模拟批量登入RDP协议（Remote Desktop Protocol），
+很简单有过Windows管理经验的人都知道微软默认的管理方式就是RDP远程桌面管理，很明显如果可以模拟此行为大量提交那么也可以破解密码，
+代表的工具就是俄罗斯黑客出品的public版工具以及XXX。其实还有一种方式不通过微软RDP端，自己重写RDP连接协议，效率更高。此类工具我就用过，嘿嘿。</p>
+<p>本地破解：
+通过抓hash然后字典破解，这种方法适合已经获取系统权限可以抓密码文件的方式，所以叫做本地破解，
+也许本人小时候帮助舅舅杀猪的时候按猪脚沾了血腥，导致这些年运气不好，成功率不到1/1000。</p>
+<p>总结：</p>
+<blockquote>
+<p>到目前为止，一些地下组织的所谓全端口抓鸡工具包也包含了Windows系统密码破解的，Windows 2000/xp/2003/vista/win7都通用，
+如果各位有疑问可以扫你们当地网段肯定可以扫到包含弱口令的机器，如果运气好那就直接可以上传执行木马。当然对于我们搞Web安全来说，
+经常遇到需要破解密码的情况无非是提权抓到了本地密码文件，然后爆破密码。还有就是日进了内网，扩展战果使用，都非常重要，而且屡试不爽。</p>
+</blockquote>
+<p>2） Linux/Unix系统密码破解：</p>
+<p>Linux/Unix目前主流的管理协议都是SSH/Telnet，常用的管理工具诸如：Putty、SecureCRT、SSHClient等，
+目前因为Linux/Unix入门相对Windows较难，因此玩Linux/Unix的人比较少，相对的流行的工具、教程也少。
+那么Linux/Unix可不可以像Windows那样批量扫肉鸡，当然是可以了。先说Telnet协议，大家都知道Telnet是明文协议，
+也就是可以抓包获取登入密码，而一般的网络设备如交换机、路由器、防火墙默认基本上都是通过Telnet协议远程管理，
+要破解Telnet协议密码也非常简单，工具很多比如X-Scan等，而SSH协议也类似，直接破解密码后使用工具也可以直接登入。
+而且登入后直接执行命令，而不必像windows那样需要种植木马后门才能够交互执行。如果有想学习路由交换而缺少银子的朋友，
+建议你操起X-Scan填入你们当地公网网段，破telnet/ssh你会发现大量的H3COM、中兴等你蹂躏。搞完考一个CCNA肯定没问题；
+总结：Linux/Unix破解密码的先决条件是目标采用静态密码验证登入系统，如果采用的是RSA密钥的方式验证，那么这类基于远程密码破解自然就无意义了。
+这也是与Windows区别比较大的地方。另外破解Linux/Unix密码也可以采用曲线救国的方式，那就是知道对方采用某一类管理工具比如VNC等X-Windows客户端软件。
+这类工具很多都有自己的验证方式，如果爆发漏洞（比如之前的VNC弱口令），或者没有采用强壮的认证方式那么更加容易被远程暴力破解。
+这种情况通常发生在有一定规模的企业，服务器达到一定的数量级为了便于管理通常都会使用某一类商用管理客户端。
+当然，目的是密码，也可以剑走偏锋。比如今年爆发的汉化版客户端Putty、SecureCRT等被植入后门的事件也充分说明了广大“黑客”的智慧无上限。
+代表工具：单一协议很多，这里推荐神器：Hydra以及NCrack。详见<a href="http://sectools.org/。" target="_blank">http://sectools.org/。</a></p>
+<h1 id="-">二、数据库密码篇：</h1>
+<p>主流的数据库很多，目前国内流行的基于破解密码的抓鸡方式最主流的就是1433抓鸡，之所以叫1433抓鸡是因为微软MSSQL Server数据库默认远程管理端口是1433（当然可以更改），
+而默认情况下MSSQL Server最高权限用户sa绑定了shell，通俗的说就是如果你拥有了MSSQL Server 数据库Sa账户的权限那么你就拥有了系统执行权限。
+所以随便谷歌1433抓鸡|1433批量抓鸡，工具教程一大把。利用的程序也就那么几个因为够代表性简述下大概流程：</p>
+<ol>
+<li>通过端口批量扫描确定开放1433的主机，一般这个扫描由S扫描器完成，也就是Wineggdrop大神的S扫描器，在此感谢他提供了互联网历史上公开最快的SYN扫描工具，没有之一。</li>
+<li>通过管理工具连接存在弱口令的主机，通常使用小榕写的MSSQL执行工具；</li>
+<li>如果发现没有权限那么导入一堆的恢复扩展命令，直到能恢复为止；</li>
+<li>确定能够执行的工具后上传木马，于是肉鸡到手；</li>
+</ol>
+<p>PS：这个是目前为止除了挂马来肉鸡最快的远程抓鸡方式，说到这里或许有人会问，Access数据库行不行，能不能破解弱口令抓肉鸡？
+没意义，因为Access是非常小型本地数据库，适用于小应用，微软没有为其提供远程管理方式，所以就没远程破解密码的说法，
+对于web安全而言更多的是通过注入、路径泄漏等方式获取Access数据库中的管理员密码然后登入后台获取Webshell，然后提权。
+当然MSSQL数据库密码获取也可以剑走偏锋，比如获取Webshell之后通过翻看配置文件，
+通常关于数据库信息容易存在于conn.asp、webconfig.xml等默认配置文件以及用户自行开发的配置文件中。
+国内也有商用工具在做白盒测试扫描时会自动遍历此类文件然后做关键是识别匹配。</p>
+<p>说完MSSQL那就不不说跟他很像的MySQL数据库，这个数据库通常运行于Linux/Unix系统中。MYSQL与其功能强大、免费、高效著称。
+很明显作为一款强大的数据库必须支持远程管理，那么自然就有破解密码这一说了，通常情况下纯粹远程破解MYSQL可以使用的工具很多比如国产的X-Scan、HScan等。
+当然也可以通过爆破phpMyadmin这个管理平台来曲线救国达到爆破的目的，区别在于用HTTP通道爆破而已。以上为比较典型的远程破解，
+而本地破解则显得比较单一，通过webshell或者提权之后获取user.MYD文件（此文件Linux与Windows都存放在相同目录）
+然后找到Hash本地爆破或者使用网站在线爆破比如：<a href="http://www.onlinehashcrack.com/multi-hash-cracking.php。" target="_blank">http://www.onlinehashcrack.com/multi-hash-cracking.php。</a>
+当然了MYSQL同样可以使用查看网站配置文件的方式获取密码，比如各种CMS以及论坛，初次安装都需要写入数据库连接信息到某配置文件xx .inc.php等。
+当然不管何种数据库都会有漏洞爆发的可能，导致验证被攻破，比如前一段时间爆发的MySQL身份认证漏洞。导致直接可以绕过认证。</p>
+<p>一篇不错的文章，所以收留之~</p>
+
+	 
+	     <p style="margin:20px 0; color:#9f9f9f; font-size:12px;">
+<span>Posted by <a style="color:#9f9f9f;" href="null"><strong>creturn</strong></a> - 9月 7 2012</span><br />
+<span style="line-height:13px;">如需转载，请注明： 本文来自 <a style="color:#9f9f9f;" href="http://creturn.com"><strong>Return&#39;s Blog </strong></a></span>
+</p>
+       	 
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title"><a href="/html/2012-07-31-非https协议web方式wifi认证突破.html">非https协议web方式wifi认证突破</a></h1>
+  
+
+      <time datetime="2012-07-31T02:43:41.000Z"><a href="/html/2012-07-31-非https协议web方式wifi认证突破.html">7月 31 2012</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <p>转自：法客 deleter</p>
+<p>话说我是个游手好闲的人，趁着暑假四处游荡，投亲靠友。一日来到某校，看有wifi，如饥似渴的打算蹭个小网上上。做好字典破wpa，暴力破</p>
+<p>wep的准备了都，连上wifi就傻眼了，web认证…</p>
+<p>好吧，web认证。既然是web认证，少不了负责验证的服务器。经测试，随便输入一个网址后都会被重定向到A站的一个登陆页面。如果能做手</p>
+<p>脚的话只能在这个页面上搞了。</p>
+<p>know it then hack it。首先找到知情人士，得知开网要提前申请，并且此账户与mac绑定。这就给了我当头一棒。本来想着肯定有很多人密码</p>
+<p>和用户名是一样的，而用户名又是学号，这样写个脚本暴力破解一个一个猜过去就行了。这样的话仅靠猜弱口令来登陆的话是不可能了。</p>
+<p>既然输入网址能被重定向到一个页面，而且此页面所在的服务器是一个公网的ip，那么说，我肯定已经分配好ip了，仅差一个授权。</p>
+<p>既然我已经有了一个ip，我就可以对所在的网段进行嗅探，如果能嗅探到登陆信息说不定还有点门路呢。</p>
+<p>有了大致的思路，开工开工~</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/html/2012-07-31-非https协议web方式wifi认证突破.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title"><a href="/html/2012-07-19-phpcms-2008多个漏洞-可getshell.html">phpcms 2008多个漏洞 (可getshell)</a></h1>
+  
+
+      <time datetime="2012-07-19T15:58:57.000Z"><a href="/html/2012-07-19-phpcms-2008多个漏洞-可getshell.html">7月 19 2012</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <p>本文转自乌云：<a href="http://www.wooyun.org/bugs/wooyun-2010-09563" target="_blank">http://www.wooyun.org/bugs/wooyun-2010-09563</a>
+[php]</p>
+<h3 id="-">文件包含</h3>
+<figure class="highlight php"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="preprocessor">&lt;?php</span>
+define(<span class="string">'IN_YP'</span>, <span class="keyword">TRUE</span>);
+define(<span class="string">'ADMIN_ROOT'</span>, str_replace(&quot;&quot;, <span class="string">'/'</span>,dirname(<span class="keyword">__FILE__</span>)).<span class="string">'/'</span>);
+<span class="keyword">require</span> <span class="string">'../include/common.inc.php'</span>;
+</pre></td></tr></table></figure>
+
+<h2 id="-">要登陆</h2>
+<figure class="highlight php"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="keyword">if</span>(!<span class="variable">$_userid</span>) showmessage(<span class="string">'您还没有登陆，即将跳转到登陆页面'</span>,
+<span class="variable">$MODULE</span>[<span class="string">'member'</span>][<span class="string">'url'</span>].<span class="string">'login.php?forward='</span>.urlencode(URL));
+session_start();
+</pre></td></tr></table></figure>
+
+<h2 id="-file-">$file变量可控制</h2>
+<figure class="highlight php"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="keyword">if</span>(!<span class="keyword">isset</span>(<span class="variable">$file</span>) || <span class="keyword">empty</span>(<span class="variable">$file</span>)) <span class="variable">$file</span> = <span class="string">'panel'</span>;
+
+<span class="comment">/* $company_user_infos 获取企业会员信息 */</span>
+<span class="variable">$company_user_infos</span> = <span class="variable">$db</span>-&gt;get_one(&quot;SELECT * FROM `&quot;.DB_PRE.&quot;member_company` 
+WHERE `userid`=<span class="string">'$_userid'</span>&quot;);
+<span class="variable">$userid</span> = <span class="variable">$_userid</span>;
+</pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/html/2012-07-19-phpcms-2008多个漏洞-可getshell.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title"><a href="/html/2012-07-01-mysql-概率性任意密码身份认证登录漏洞cve-2012-2122.html">MySQL 概率性任意密码(身份认证)登录漏洞(CVE-2012-2122)</a></h1>
+  
+
+      <time datetime="2012-07-01T04:16:30.000Z"><a href="/html/2012-07-01-mysql-概率性任意密码身份认证登录漏洞cve-2012-2122.html">7月 1 2012</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <h3 id="-2012-06-11-gmt-0800-">发布时间: 2012-06-11 (GMT+0800)</h3>
+<h2 id="-">漏洞版本:</h2>
+<p>MySQL &lt; 5.6.6
+MySQL &lt; 5.5.24
+MySQL &lt; 5.1.63
+MariaDB &lt; 5.5.23
+MariaDB &lt; 5.3.6
+MariaDB &lt; 5.2.12
+MariaDB &lt; 5.1.62</p>
+<h2 id="-">漏洞描述:</h2>
+<p>CVE ID: CVE-2012-2122</p>
+<p>MariaDB是为MySQL提供偶然替代功能的数据库服务器。MySQL是开源数据库。</p>
+<p>MariaDB 5.1.62, 5.2.12、5.3.6、5.5.23之前版本和MySQL 5.1.63、5.5.24、5.6.6之前版本在用户验证的处理上存在安全漏洞，可能导致攻击者无需知道正确口令就能登录到MySQL服务器。</p>
+<p>用户连接到MariaDB/MySQL后，应用会计算和比较令牌值，由于错误的转换，即使memcmp()返回非零值，也可能出现错误的比较，造成MySQL/MariaDB误认为密码是正确的，因为协议使用的是随机字符串，该Bug发生的几率为1/256。MySQL的版本是否受影响取决于程序的编译方式，很多版本（包括官方提供的二进制文件）并不受此漏洞的影响。</p>
+<p>也就是说只要知道用户名，不断尝试就能够直接登入SQL数据库。按照公告说法大约256次就能够蒙对一次。而且漏洞利用工具已经出现。</p>
+<blockquote>
+<p>参考
+<a href="http://seclists.org/oss-sec/2012/q2/493" target="_blank">http://seclists.org/oss-sec/2012/q2/493</a></p>
+</blockquote>
+<p>测试方法:</p>
+<p>本站提供程序(方法)可能带有攻击性,仅供安全研究与教学之用,风险自负!
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/html/2012-07-01-mysql-概率性任意密码身份认证登录漏洞cve-2012-2122.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title"><a href="/html/2012-07-01-使用-htaccess自定义404页面.html">使用.htaccess自定义404页面</a></h1>
+  
+
+      <time datetime="2012-07-01T03:51:14.000Z"><a href="/html/2012-07-01-使用-htaccess自定义404页面.html">7月 1 2012</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <h2 id="-">配置</h2>
+<p>httpd.conf对目录开启</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre>AllowOverride <span class="keyword">All</span>
+</pre></td></tr></table></figure>
+
+<blockquote>
+<p>然后在目录里放一个.htaccess（.htaccess）</p>
+</blockquote>
+<p>在里面写</p>
+<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+</pre></td><td class="code"><pre><span class="keyword"><span class="common">errorDocument</span></span> 404 /404.html（这个的内容根据你的情况改写）
+</pre></td></tr></table></figure>
+
+<p>可是有时候当你用IE浏览的时候会发现，这玩意压根就不跳转</p>
+<p>关键的地方就是这个html</p>
+<p>如果404.html的小于512字节的话，那么IE会认为这个错误页面不够“友好”，会忽视掉的，现在分享出来，遇到相同问题的朋友就知道原因了。</p>
+<p>附:</p>
+<blockquote>
+<p>.htaccess文件(或者”分布式配置文件”提供了针对目录改变配置的方法， 即，在一个特定的文档目录中放置一个包含一个或多个指令的文件， 以作用于此目录及其所有子目录。作为用户，所能使用的命令受到限制。管理员可以通过Apache的AllowOverride指令来设置。</p>
+</blockquote>
+<ul>
+<li><p>子目录中的指令会覆盖更高级目录或者主服务器配置文件中的指令。</p>
+</li>
+<li><p>.htaccess必须以ASCII模式上传，最好将其权限设置为644。</p>
+</li>
+<li><h2 id="-">错误文档的定位</h2>
+常用的客户端请求错误返回代码：<figure class="highlight config"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre><span class="number">401</span> Authorization Required
+<span class="number">403</span> Forbidden
+<span class="number">404</span> <span class="keyword">Not</span> Found
+<span class="number">405</span> <span class="function"><span class="keyword">Method</span> <span class="title">Not</span> <span class="title">Allowed</span>
+408 <span class="title">Request</span> <span class="title">Timed</span> <span class="title">Out</span>
+411 <span class="title">Content</span> <span class="title">Length</span> <span class="title">Required</span>
+412 <span class="title">Precondition</span> <span class="title">Failed</span>
+413 <span class="title">Request</span> <span class="title">Entity</span> <span class="title">Too</span> <span class="title">Long</span>
+414 <span class="title">Request</span> <span class="title">URI</span> <span class="title">Too</span> <span class="title">Long</span>
+415 <span class="title">Unsupported</span> <span class="title">Media</span> <span class="title">Type</span>
+常见的服务器错误返回代码：
+500 <span class="title">Internal</span> <span class="title">Server</span> <span class="title">Error</span></span>
+</pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/html/2012-07-01-使用-htaccess自定义404页面.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title"><a href="/html/2012-07-01-利用grep查找webshell.html">Linux下利用grep查找webshell</a></h1>
+  
+
+      <time datetime="2012-06-30T18:22:58.000Z"><a href="/html/2012-07-01-利用grep查找webshell.html">7月 1 2012</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <h2 id="web-shell-">WEB SHELL 排查</h2>
+<p>grep （global search regular expression(RE) and print out the line,全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。Unix的grep家族包括grep、egrep和fgrep。**</p>
+<p>利用grep命令我们可以查找常见的漏洞、webshell和其他恶意文件。本文使用的grep版本为2.9，如果你使用一个低于2.5.4的grep，那本片文章中的一些命令可能无法正常工作。可以用grep -v或grep -version确定一下版本。你也可以使用grep –help查看更多信息。如下图：</p>
+<p><a href="http://www.creturn.com/asset/uploads/2012/07/1.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/1.png" alt="" title="1"></a>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/html/2012-07-01-利用grep查找webshell.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title"><a href="/html/2012-07-01-webshell高级查杀.html">webshell高级查杀</a></h1>
+  
+
+      <time datetime="2012-06-30T18:13:29.000Z"><a href="/html/2012-07-01-webshell高级查杀.html">7月 1 2012</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <h2 id="-">很多人一直注重于攻击，而轻视于防御。</h2>
+<blockquote>
+<p>攻击在于创新，防御在于全面。</p>
+<p>用计算机的术语来说，攻是个单线程任务，你单核cpu频率越高，则效果愈好。</p>
+<p>防则是个多线程任务，你cpu核心越多，则效果俞佳。</p>
+</blockquote>
+<h2 id="-webshell-">下面说webshell的查杀</h2>
+<ul>
+<li><p>其实和pc一样，如安卓的恶意捆绑木马 和linux的恶意镜像源。一样的道路，web也要过一遍，pc端杀毒也是几个阶段。</p>
+</li>
+<li><p>从最初的专杀到特征码查杀再到基于行为的查杀（启发式查杀），再到最近炒得火热的云查杀。</p>
+</li>
+<li><p>说句题外话：所谓的云查杀更像是基于网络的特征码查杀。</p>
+</li>
+<li><p>同理：服务器上的webshell查杀也需要走特征码的路线，在现在硬件水平高于网络通信带宽的情况下，特征码还是非常必要的，接下来的就是讲webshell的特征码问题。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/html/2012-07-01-webshell高级查杀.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+
+  <nav id="pagination">
+  
+  
+</nav>
+</div>
+    </div>
+    <div class="tabbar" onload="divideTabBar()">
+	
+      <div class="tabbaritem"><a class="next" href="/">Home</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/archives/">Archives</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/about/">About</a></div>
+    
+</div>
+
+
+  </div>
+</body>
+</html>

