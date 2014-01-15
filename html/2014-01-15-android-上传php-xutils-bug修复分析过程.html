@@ -179,7 +179,8 @@ httpUtils.send(HttpRequest.HttpMethod.POST, UPLOAD_URL, params, <span class="key
 </pre></td></tr></table></figure>
 
 <p>可以看到用起来比较方便，如果自己写还是比较麻烦的。不过最让人头疼的不是使用方法，而是作为接收端为PHP的话是接收不到上传的文件，最后经证实
-不仅仅是PHP C# 也有问题, 网上搜素了下不少人都遇到问题不过没有解决方案，看来只能自己动手解决了</p>
+不仅仅是PHP C# 也有问题, 网上搜素了下不少人都遇到问题不过没有解决方案，看来只能自己动手解决了
+<a id="more"></a></p>
 <h2 id="-">问题分析</h2>
 <p>既然要解决问题，那么就需要分析bug可能出现的地方，既然是HTTP上传那么我们得知道在PHP 在HTTP协议中文件是怎么处理上传的，直接在官方文档
 就可以找到</p>
@@ -336,7 +337,7 @@ print_r(<span class="variable">$_FILES</span>);
 <p>看看我们抓到的包内容:</p>
 </li>
 </ul>
-<p><img src="http://www.creturn.com/asset/img/android_sniffer.png" alt="smart sniffer抓包内容"></p>
+<p><img src="http://asset.creturn.com/asset/img/android_sniffer.png" alt="smart sniffer抓包内容"></p>
 <p>图种可以看到我们上传的HTTP包信息，不过很明显反馈的信息提示是没有上传成功的。</p>
 <p>那么接下来我们怎么去分析这个？怎么去排查问题？很多人应该能够想到，要是有个正确参照物不就很容易分析出问题出处？</p>
 <p>那么我们在建立一个html文件用浏览器同样上传sdcard里面的hello.txt文件,html内容如下:</p>
@@ -462,7 +463,7 @@ hello upload
 </pre></td></tr></table></figure>
 
 <p>打开cmd 然后输入telnet www.creturn.com 80 然后黏贴进去看看效果</p>
-<p><img src="http://www.creturn.com/asset/img/andriod-telnet.png" alt="telnet post"></p>
+<p><img src="http://asset.creturn.com/asset/img/andriod-telnet.png" alt="telnet post"></p>
 <p>为了印证我们的才行可以把charset加上去和去掉的进行对比看看是不是加了之后就收不到上传文件的信息。</p>
 <p>其实根据HTTP协议来讲理论上加不加charset应该不会影响上传，但结果这个问题确实是由于charset引起的。</p>
 <p>接下来就简单了找到根源解决就行，在源码里面进行搜索 boundary ，找到地方根据作者写的方法注释掉其中添加charset的代码:</p>

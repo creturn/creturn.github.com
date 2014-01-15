@@ -131,7 +131,7 @@
 <p>arp欺骗，我想大家都应该知道怎么回事了。不知道的去问度娘。。。</p>
 <p>就不废话了，还是直接上图上教程比较实在。环境，ubuntu 12.10 当然你也可以是ubuntu的其他版本。或者其他linux</p>
 <p>系统。环境如图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/10/001.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/10/001.png" alt="" title="001"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/10/001.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/10/001.png" alt="" title="001"></a></p>
 <p>Arp欺骗工具我们就用ettercap吧，经典工具我就不多说了。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>sudo apt<span class="attribute">-get</span> install  ettercap<span class="attribute">-text</span><span class="attribute">-only</span>  <span class="comment">//安装纯字符界面的ettercap</span>
@@ -140,7 +140,7 @@
 <a id="more"></a>
 
 <p>上面命令就可以直接安装它了，因为ubuntu软件仓储里面已经有了，直接可以进行安装。我已经装好了，版本信息如下：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/10/002.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/10/002.png" alt="" title="002"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/10/002.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/10/002.png" alt="" title="002"></a></p>
 <p>还需要安装一个东西，也是今天的主角：driftnet</p>
 <p>估计linux 的同学应该都很少有人知道这个是神码玩意吧，我就先说说它的作用吧，driftnet是一款</p>
 <p>用于抓取指定接口数据流上面图片的软件并且吧嗅探到的图片友好的显示在一个窗口当中。</p>
@@ -150,11 +150,11 @@
 </pre></td></tr></table></figure>
 
 <p>看看我的版本信息吧：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/10/0031.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/10/0031.png" alt="" title="003"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/10/0031.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/10/0031.png" alt="" title="003"></a></p>
 <p>装完这些估计有人就会问了，这个和MM有神码联系？</p>
 <p>额，好吧，那就说说怎么个联系法。</p>
 <p>先看张流程图片：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/10/005.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/10/005.png" alt="" title="005"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/10/005.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/10/005.png" alt="" title="005"></a></p>
 <p>这张图片已经说明了我们要做什么了，和怎么去做了，那么下来我们就进行实践操作。</p>
 <p>首先，我们需要进行Arp欺骗，把MM的PC欺骗过来，欺骗过来后，MM那边的所有数据都是通过通过我们的机器</p>
 <p>再出去（外网）的。</p>
@@ -166,20 +166,20 @@
 
 <p>注意：我这里用-i wlan0是因为我自己用的是无线，根据实际情况自行操作</p>
 <p>输入命令后的效果如图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/10/006.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/10/006.png" alt="" title="006"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/10/006.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/10/006.png" alt="" title="006"></a></p>
 <p>然后我们需要用到我们的主角了，driftnet</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>driftnet <span class="attribute">-i</span> wlan0
 </pre></td></tr></table></figure>
 
 <p>运行后随便浏览下带有图片的网站效果如图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/10/007.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/10/007.png" alt="" title="007"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/10/007.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/10/007.png" alt="" title="007"></a></p>
 <p>调整好浏览图片的窗口，然后我们就等着MM上网呗。这里当然只能自己做实验了，因为宽带独享。。。。。</p>
 <p>手里只有个ipad那就欺骗它来看看欺骗效果。手机也可以欺骗哦。</p>
 <p>电脑截图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/10/009.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/10/009.png" alt="" title="009"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/10/009.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/10/009.png" alt="" title="009"></a></p>
 <p>怎么样？效果似乎不错是吧？嘿嘿，最后再来一张手机拍的PC和ipad的合照，这样也可以有个对照参考，如图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/10/008.jpg" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/10/008.jpg" alt="" title="008"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/10/008.jpg" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/10/008.jpg" alt="" title="008"></a></p>
 <blockquote>
 <p>再给点提示，以便屌丝们可以获取更多信息，tcpdump是linux比较有名的抓包工具，利用tcpdump可以抓取更详细的信息，这样再结合社会工程学，我想MM的信息肯定是跑步掉了！</p>
 </blockquote>

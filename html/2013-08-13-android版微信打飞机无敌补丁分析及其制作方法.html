@@ -140,9 +140,9 @@
 <p>代码分析:</p>
 <p>刚开始看到这个游戏以为用的是html5+js写的,不过解包后看到里面的东西就傻眼了，不过依然有方法.</p>
 <p>1.下载 5.0 android的版本的微信,修改后缀名为zip然后解压,如图:</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/201381901926167.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/201381901926167.png" alt="201381901926167"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/201381901926167.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/201381901926167.png" alt="201381901926167"></a></p>
 <p>2.在解压的目录中找到assset目录然后打开里面的preload目录，如图:</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/201381901927891.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/201381901927891.png" alt="201381901927891"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/201381901927891.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/201381901927891.png" alt="201381901927891"></a></p>
 <p>可以看到这个目录放了一些jar包，猜测微信采用插件机制来实现功能模块的扩展,其中以”com.tencent.mm.plugin.shoot”开头的jar包，从名字中可以猜测到它就是我们的目标</p>
 <p>这里要说后面需要用到的两款软件:</p>
 <p>1.apktool :用来把apk或者jar包反编译成android的java虚拟机的机器码,方便修改代码逻辑</p>
@@ -155,7 +155,7 @@
 <p>下载地址: <a href="http://java.decompiler.free.fr/?q=jdgui" target="_blank">http://java.decompiler.free.fr/?q=jdgui</a></p>
 <p>工具齐全后就开始对代码动刀</p>
 <p>用dex2jar把com.tencent.mm.plugin.shoot开头的那个文件处理下,会得到以dex2jar.jar结尾的文件用jd-gui打开这个文件，我们就能看到编译出来的文件，不过腾讯的同学对代码进行了混淆处理所以里面有很多a,b,c,d,e这样的文件,不过很不幸的是腾讯的家伙估计太粗心了，把游戏对象和功能代码没做混淆，混淆的反而是gdx游戏框架的代码,如图:</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/201381901929371.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/201381901929371.png" alt="201381901929371"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/201381901929371.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/201381901929371.png" alt="201381901929371"></a></p>
 <p>在actor这个包里面明显能看出来各个类的作用，不知道腾讯的同学是妹子想多了还是不给发奖金了，核心部分不做混淆处理…</p>
 <p>上面分析的时候说过无敌模式的几种方式，我这里采用最后一种给自己多加几条命这样也能死掉~~  不然分数都提交不了就没有意义了，看看Player类中的构造函数（或者叫做初始化函数也行）：</p>
 <p>[java]
@@ -178,11 +178,11 @@
 [/shell]</p>
 <p>后面的d参数是反编译，如果换成b就是再次编译回去。</p>
 <p>解包后文件如下图所示：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/201381901932654.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/201381901932654.png" alt="201381901932654"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/201381901932654.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/201381901932654.png" alt="201381901932654"></a></p>
 <p>其中smali目录就是反编译后的代码，里面的文件以 smali结尾，文件位置和包位置保持一致如下图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/201381901933428.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/201381901933428.png" alt="201381901933428"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/201381901933428.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/201381901933428.png" alt="201381901933428"></a></p>
 <p>用任意一款文本编辑器打开Player.smali文件，我们可以看到里面的代码，如下图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/201381901935312.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/201381901935312.png" alt="201381901935312"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/201381901935312.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/201381901935312.png" alt="201381901935312"></a></p>
 <p>仔细看有点像汇编，不过它却不是网上可以找到smali语法帮助，我们在这个文件中找到初始化方法，constructor &lt;init&gt;()看着是不是很眼熟：</p>
 <p>[java]
 &lt;pre&gt;.method public constructor &lt;init&gt;()V

@@ -137,16 +137,16 @@
 
 <p><a id="more"></a>
 输入管理员密码后确认安装，然后等待安装结束。如图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/08/2012-08-15-224239的屏幕截图.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/08/2012-08-15-224239的屏幕截图.png" alt="" title="2012-08-15 22:42:39的屏幕截图"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/08/2012-08-15-224239的屏幕截图.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/08/2012-08-15-224239的屏幕截图.png" alt="" title="2012-08-15 22:42:39的屏幕截图"></a></p>
 <p>网速快的花2-3分钟就装好了。然后我们检查下是否成功：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre>pgrep mongo -l     //查看是否存在mongo的进行。为啥不看端口<span class="keyword">...</span>初次安装我不知道端口号
 </pre></td></tr></table></figure>
 
 <p>可以看到已经存在Id为3913的mongod进程，说明已经启动运行了。如图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/08/2012-08-15-224758的屏幕截图.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/08/2012-08-15-224758的屏幕截图.png" alt="" title="2012-08-15 22:47:58的屏幕截图"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/08/2012-08-15-224758的屏幕截图.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/08/2012-08-15-224758的屏幕截图.png" alt="" title="2012-08-15 22:47:58的屏幕截图"></a></p>
 <p>接着我们直接输入mongo进去瞅瞅这货长啥样，输入help我们可以看看帮信息，如图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/08/2012-08-15-225103的屏幕截图.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/08/2012-08-15-225103的屏幕截图.png" alt="" title="2012-08-15 22:51:03的屏幕截图"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/08/2012-08-15-225103的屏幕截图.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/08/2012-08-15-225103的屏幕截图.png" alt="" title="2012-08-15 22:51:03的屏幕截图"></a></p>
 <p>可以看到我的版本现在是2.0.4</p>
 <p>好了，接下来就继续安装Erlang：</p>
 <p>ubuntu的好处就是基本上所有需要的东西只需要一句话就搞定，输入如下代码：</p>
@@ -156,7 +156,7 @@
 
 <p>等待了3分钟后安装完成。说实在的，第一次用还没看过文档，继续erlang看看有啥东西</p>
 <p>结果，我的猜想是错误的，其实应该是erl ....  输入erl -h  可以看到一部分帮助信息。如图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/08/2012-08-15-231227的屏幕截图.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/08/2012-08-15-231227的屏幕截图.png" alt="" title="2012-08-15 23:12:27的屏幕截图"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/08/2012-08-15-231227的屏幕截图.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/08/2012-08-15-231227的屏幕截图.png" alt="" title="2012-08-15 23:12:27的屏幕截图"></a></p>
 <p>接下来就是给神器eclipse装erlang的插件了。其实我更愿意称呼vim为神器。但在项目管理等方面还是觉得eclipse是不错的选择</p>
 <blockquote>
 <p>打开eclipse -&gt; help -&gt; install new soft ，点击work with 旁边的Add添加erlang的一个Ide插件，地址为：</p>
@@ -165,13 +165,13 @@
 </pre></td><td class="code"><pre><span class="keyword">http</span>://erlide.org/update        <span class="comment"> //erlide 一个erlang的ide插件</span>
 </pre></td></tr></table></figure>
 
-<p><a href="http://www.creturn.com/asset/uploads/2012/08/2012-08-15-231934的屏幕截图.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/08/2012-08-15-231934的屏幕截图.png" alt="" title="2012-08-15 23:19:34的屏幕截图"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/08/2012-08-15-231934的屏幕截图.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/08/2012-08-15-231934的屏幕截图.png" alt="" title="2012-08-15 23:19:34的屏幕截图"></a></p>
 <p>点击确定等待几分钟后自动会更新插件信息</p>
 <p>如图所示，我是两个一起选择，下面的是ide的插件上面的看名字应该是一些插件和code那么一并装了。</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/08/2012-08-15-232358的屏幕截图.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/08/2012-08-15-232358的屏幕截图.png" alt="" title="2012-08-15 23:23:58的屏幕截图"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/08/2012-08-15-232358的屏幕截图.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/08/2012-08-15-232358的屏幕截图.png" alt="" title="2012-08-15 23:23:58的屏幕截图"></a></p>
 <p>一路下一步就行，中间需要同意他们的协议，要不不能继续。</p>
 <p>装玩后，file-&gt;new Project 可以看到里面已经有了erlang project如图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/08/2012-08-15-233218的屏幕截图.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/08/2012-08-15-233218的屏幕截图.png" alt="" title="2012-08-15 23:32:18的屏幕截图"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/08/2012-08-15-233218的屏幕截图.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/08/2012-08-15-233218的屏幕截图.png" alt="" title="2012-08-15 23:32:18的屏幕截图"></a></p>
 <p>好了，环境也就搭建起来了~~</p>
 
 	 

@@ -127,12 +127,12 @@
         <p>今天介绍一款利用显卡超强运算能力进行爆破密码的工具hashcat，用它来进行爆破window密码</p>
 <p>当然他支持的不仅仅是window SAM密码的爆破。</p>
 <p>我本机环境和显卡信息如图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/224255j1foiui0lrc10rsh.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224255j1foiui0lrc10rsh.png" alt="224255j1foiui0lrc10rsh"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/224255j1foiui0lrc10rsh.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/224255j1foiui0lrc10rsh.png" alt="224255j1foiui0lrc10rsh"></a></p>
 <a id="more"></a>
 
 <p>hashcat的下载地址为：<a href="http://hashcat.net/files_legacy/hashcat-0.40.7z" target="_blank">http://hashcat.net/files_legacy/hashcat-0.40.7z</a> 这个为非gui，如果需要gui的可以去官网下载gui版本</p>
 <p>解压后可以看到如图内容：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/224256bl2n8535y5pvl87n.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224256bl2n8535y5pvl87n.png" alt="224256bl2n8535y5pvl87n"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/224256bl2n8535y5pvl87n.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/224256bl2n8535y5pvl87n.png" alt="224256bl2n8535y5pvl87n"></a></p>
 <p>其中window和linux对应的版本都有。我是64位ubuntu 那么就用hashcat-cli64.bin</p>
 <p>为了方便使用我做了一个软链接：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre>1
@@ -140,7 +140,7 @@
 </pre></td></tr></table></figure>
 
 <p>这样打开终端后不管在什么位置直接输入hashcat就行了，看看它支持的密码类型：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/224300uew6cie9zieq7cbq.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224300uew6cie9zieq7cbq.png" alt="224300uew6cie9zieq7cbq"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/224300uew6cie9zieq7cbq.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/224300uew6cie9zieq7cbq.png" alt="224300uew6cie9zieq7cbq"></a></p>
 <p>其中红色部分就是sam加密类型</p>
 <p>我们先看看hashcat的运算能力怎么。我们用php的md5加密6个z试试看看它进行爆破速度怎么样：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre>1
@@ -160,7 +160,7 @@
 
 <p>解释下命令：time 用来统计执行这条命令耗费的时间，-a 是破解模式 -m 密码类型 后面的？l 是密码的配置符号。？l为小写字符a-z</p>
 <p>结果如图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/224303cnhu6wowugpmlpm6.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224303cnhu6wowugpmlpm6.png" alt="224303cnhu6wowugpmlpm6"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/224303cnhu6wowugpmlpm6.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/224303cnhu6wowugpmlpm6.png" alt="224303cnhu6wowugpmlpm6"></a></p>
 <p>可以看到我标记出来的：</p>
 <p>1.当前的匹配模式  2.破解结果 3.time 计算出耗费的时间</p>
 <p>可以看到穷举6位字母用时14秒效果已经很不错了。当然这个也跟自己的显卡性能有关</p>
@@ -171,7 +171,7 @@
 </pre></td></tr></table></figure>
 
 <p>好了。继续，看下我的分区情况。因为现在在ubuntu下我的window在c盘第一分区上装着，如图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/224307iz3gs432za1vawbx.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224307iz3gs432za1vawbx.png" alt="224307iz3gs432za1vawbx"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/224307iz3gs432za1vawbx.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/224307iz3gs432za1vawbx.png" alt="224307iz3gs432za1vawbx"></a></p>
 <p>挂在sda1分区到我的/win</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="keyword">mkdir</span> /win &amp; mount /dev/sda1 /win
@@ -179,10 +179,10 @@
 
 <p>上面命令是在根目录下创建win文件夹并且挂载sda1</p>
 <p>看看win下是否挂载成功，如果成功了，可以看到win目录下有window系统c盘（系统盘）的内容</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/224310ayqj3g611m6tgy11.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224310ayqj3g611m6tgy11.png" alt="224310ayqj3g611m6tgy11"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/224310ayqj3g611m6tgy11.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/224310ayqj3g611m6tgy11.png" alt="224310ayqj3g611m6tgy11"></a></p>
 <p>拷贝：cp /win/Windows/System32/config/SYSTEM  和SAM 文件到当前文件夹</p>
 <p>然后执行命令如下图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/224313ubvwmmtwwfyxlttg.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224313ubvwmmtwwfyxlttg.png" alt="224313ubvwmmtwwfyxlttg"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/224313ubvwmmtwwfyxlttg.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/224313ubvwmmtwwfyxlttg.png" alt="224313ubvwmmtwwfyxlttg"></a></p>
 <p>命令解释：</p>
 <blockquote>
 <p>1和2是拷贝 SYSTEM和SAM到当前文件夹</p>
@@ -190,14 +190,14 @@
 <p>4.利用bootkey提取出hash值</p>
 </blockquote>
 <p>提取出来的哈是值如图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/224314lf5dy5dq3b95zkkd.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224314lf5dy5dq3b95zkkd.png" alt="224314lf5dy5dq3b95zkkd"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/224314lf5dy5dq3b95zkkd.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/224314lf5dy5dq3b95zkkd.png" alt="224314lf5dy5dq3b95zkkd"></a></p>
 <p>window的hash密文其实就是最后两个‘：’号之间的数据，到这里拿到值后其实就可以去网上看下有已经破解的密文了没</p>
 <p>可以看如图，已经找到密码了：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/224317qpwypa77l2gly2zv.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224317qpwypa77l2gly2zv.png" alt="224317qpwypa77l2gly2zv"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/224317qpwypa77l2gly2zv.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/224317qpwypa77l2gly2zv.png" alt="224317qpwypa77l2gly2zv"></a></p>
 <p>那么接下来我们爆破。取出密文，也就是最后两个‘：’之间的数据保存为pwd.txt</p>
 <p>执行如下图命令：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/224318amdzfb6wrydsiebr.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224318amdzfb6wrydsiebr.png" alt="224318amdzfb6wrydsiebr"></a></p>
-<p><a href="http://www.creturn.com/asset/uploads/2013/11/224320t0idau0t1r5edyuu.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2013/11/224320t0idau0t1r5edyuu.png" alt="224320t0idau0t1r5edyuu"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/224318amdzfb6wrydsiebr.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/224318amdzfb6wrydsiebr.png" alt="224318amdzfb6wrydsiebr"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2013/11/224320t0idau0t1r5edyuu.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2013/11/224320t0idau0t1r5edyuu.png" alt="224320t0idau0t1r5edyuu"></a></p>
 <p>中机会有提示确认信息，输入大写YES就行</p>
 <p>命令解释：</p>
 <blockquote>

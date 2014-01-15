@@ -127,7 +127,7 @@
         <h2 id="web-shell-">WEB SHELL 排查</h2>
 <p>grep （global search regular expression(RE) and print out the line,全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。Unix的grep家族包括grep、egrep和fgrep。**</p>
 <p>利用grep命令我们可以查找常见的漏洞、webshell和其他恶意文件。本文使用的grep版本为2.9，如果你使用一个低于2.5.4的grep，那本片文章中的一些命令可能无法正常工作。可以用grep -v或grep -version确定一下版本。你也可以使用grep –help查看更多信息。如下图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/1.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/1.png" alt="" title="1"></a>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/1.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/1.png" alt="" title="1"></a>
 <a id="more"></a></p>
 <h2 id="-">发现漏洞的常见方法：</h2>
 <p>为什么大多数web应用程序都会发现一些不安全的代码，就是因为调用了一些不安全的函数，而又未进行过滤。例如：命令注入或远程代码执行，可以执行客户端传递的参数。这里常常会用到shell_exec函数。我们可以用grep命令搜索文件中存在shell_exec函数的地方，如下：</p>
@@ -135,7 +135,7 @@
 </pre></td><td class="code"><pre>grep <span class="attribute">-Rn</span> “shell_exec <span class="subst">*</span>( ” /<span class="built_in">var</span>/www
 </pre></td></tr></table></figure>
 
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/2.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/2.png" alt="" title="2"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/2.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/2.png" alt="" title="2"></a></p>
 <p>上图中，我们可以看到可能存在漏洞的函数行和路径。</p>
 <p>另一个例子：</p>
 <p>include require include_once和require_once都是可能存在问题的地方，它可能会造成本地文件包含漏洞。</p>
@@ -150,7 +150,7 @@ grep <span class="attribute">-Rn</span> “include_once <span class="subst">*</s
 grep <span class="attribute">-Rn</span> “require_once <span class="subst">*</span>(” /<span class="built_in">var</span>/www
 </pre></td></tr></table></figure>
 
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/3.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/3.png" alt="" title="3"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/3.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/3.png" alt="" title="3"></a></p>
 <p>以上两个简单的例子可以做为白盒挖掘漏洞的参考，下面介绍一下查找webshell和其他恶意文件的方法：</p>
 <p>常见的webshell都会包含一些功能，如执行命令、下载文件、编辑文件、反弹连接等行为。</p>
 <p>除了常见的shell_exec，base64_decode和eval，还有其他的一些特征码，比如phpspy2006中会包含“Version:2006,proxycontents”，phpspy2008中会包含“phpspypass,goaction(‘backconnect”等等。</p>
@@ -202,8 +202,8 @@ grep <span class="attribute">-Rn</span> “eval <span class="subst">*</span>(”
 grep <span class="attribute">-Rn</span> “passthru <span class="subst">*</span>(” /<span class="built_in">var</span>/www
 </pre></td></tr></table></figure>
 
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/4.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/4.png" alt="" title="4"></a></p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/5.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/5.png" alt="" title="5"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/4.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/4.png" alt="" title="4"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/5.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/5.png" alt="" title="5"></a></p>
 <p>当然这些可以合并成一条命令，如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="keyword">grep</span> -RPn “(passthru|shell_exec|<span class="keyword">system</span>|phpinfo|base64_decode|<span class="keyword">chmod</span>|<span class="keyword">mkdir</span>|fopen|fclose|readfile|php_uname|<span class="keyword">eval</span>|tcpflood|udpflood|edoced_46esab) <span class="variable">*(</span>” /var/www

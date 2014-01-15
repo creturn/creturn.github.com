@@ -218,11 +218,11 @@ WHERE `userid`=<span class="string">'$_userid'</span>&quot;);
 <p>所以就顺手给他去面试的那家公司做个安全测试，就把过程记录下来吧：</p>
 <p>首先打开目标站点：</p>
 <p>右击查看网站源代码，发现几个比较特殊的地方：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/dede_source.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/dede_source.png" alt="" title="dede_source"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/dede_source.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/dede_source.png" alt="" title="dede_source"></a></p>
 <p>可以看到根目录有a文件夹和uploads，对于dedecms熟悉的人都知道，dedecms有a和uploads/allimg目录，</p>
 <p>抱着试试的心态目标站点后面加上member看看，一般做二次开发不带会员中心的话member基本还是原因，</p>
 <p>也就能判断出目标系统：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/dede_cms.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/dede_cms.png" alt="" title="dede_cms"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/dede_cms.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/dede_cms.png" alt="" title="dede_cms"></a></p>
 <p>可以清楚的看到目标是dedecms系统
 
       
@@ -275,7 +275,7 @@ WHERE `userid`=<span class="string">'$_userid'</span>&quot;);
         <p>其实这个漏洞也是偶然发现的，最近项目中用到了ThinkPHP框架习惯性的想到</p>
 <p>了此框架的漏洞，那就顺便google了一下看看现在还有那些大点的站存在此漏洞</p>
 <p>结果91.com这个字眼吸引了我。google:intitle:系统错误 thinkphp 91</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/91_2.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/91_2.png" alt="" title="91_2"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/91_2.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/91_2.png" alt="" title="91_2"></a></p>
 <p>那就顺手测试一下啊结果存在远程命令执行漏洞
 
       

